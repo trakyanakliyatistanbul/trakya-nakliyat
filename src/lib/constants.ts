@@ -1,0 +1,29 @@
+export const SITE_CONFIG = {
+  name: 'Trakya Nakliyat İstanbul',
+  shortName: 'Trakya Nakliyat',
+  tagline: 'Asansörlü Evden Eve Nakliyat',
+  url: 'https://www.trakyanakliyatistanbul.com',
+  phone: '0544 999 34 66',
+  phoneHref: 'tel:05449993466',
+  whatsapp: 'https://wa.me/905449993466',
+  email: 'trakyanakliyatistanbul@gmail.com',
+  emailHref: 'mailto:trakyanakliyatistanbul@gmail.com',
+  instagram: 'https://instagram.com/trakyanakliyatistanbul',
+  instagramHandle: '@trakyanakliyatistanbul',
+  address: 'Beylikdüzü, İstanbul',
+  workingHours: 'Pzt–Paz · 07:00–22:00',
+  googleRating: '4.9',
+  googleReviewCount: '150+',
+  foundedYear: 1994,
+  experience: '23+',
+} as const
+
+export const COLORS = {
+  navy: '#0B1220',
+  navyMid: '#141d33',
+  navyCta: '#0F172A',
+  navyCard: '#1a2744',
+  gold: '#C9A227',
+  goldBright: '#D4AF37',
+  goldDeep: '#A8841E',
+} as const

@@ -1,0 +1,6 @@
+Bu klasöre eklenecekler:
+
+- logo.png      → Trakya Nakliyat logosu
+- arac.png      → Kurumsal araç görseli
+- og-image.jpg  → Open Graph görseli (1200x630px)
+- favicon.ico   → Site ikonu
