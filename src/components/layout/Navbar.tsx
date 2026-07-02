@@ -13,18 +13,18 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 bg-[#0B1220] border-b border-[rgba(201,162,39,0.18)]">
+    <header className="sticky top-0 z-50 bg-[#0B1220] border-b border-[rgba(176,141,87,0.18)]">
       <nav className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 h-[76px] flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 no-underline">
-          <div className="w-[42px] h-[42px] bg-[#C9A227] rounded-[9px] flex items-center justify-center flex-shrink-0">
+          <div className="w-[42px] h-[42px] bg-[var(--gold)] rounded-[9px] flex items-center justify-center flex-shrink-0">
             <span className="text-[15px] font-black text-[#0B1220] tracking-tight">TN</span>
           </div>
-          <div className="w-px h-9 bg-[rgba(201,162,39,0.3)] rounded-sm" />
+          <div className="w-px h-9 bg-[rgba(176,141,87,0.3)] rounded-sm" />
           <div className="flex flex-col justify-center">
             <span className="text-[17px] font-extrabold text-white tracking-tight leading-tight">
-              TRAKYA <span className="text-[#D4AF37]">NAKLİYAT</span>
+              TRAKYA <span className="text-[var(--gold)]">NAKLİYAT</span>
             </span>
             <span className="text-[9px] text-[rgba(255,255,255,0.42)] uppercase tracking-[1.2px] mt-0.5">
               İstanbul · Evden Eve Nakliyat
@@ -38,7 +38,7 @@ export default function Navbar() {
             <li key={link.href}>
               <Link
                 href={link.href}
-                className="text-[rgba(255,255,255,0.60)] no-underline text-[13.5px] px-3 py-1.5 rounded-md hover:text-[#D4AF37] transition-colors duration-150"
+                className="text-[rgba(255,255,255,0.60)] no-underline text-[13.5px] px-3 py-1.5 rounded-md hover:text-[var(--gold)] transition-colors duration-150"
               >
                 {link.label}
               </Link>
@@ -76,7 +76,7 @@ export default function Navbar() {
           </a>
           <a
             href={SITE_CONFIG.phoneHref}
-            className="flex items-center gap-1.5 bg-[#C9A227] text-[#0B1220] border-none px-4 py-2 rounded-[7px] text-[13px] font-bold no-underline hover:bg-[#D4AF37] transition-colors"
+            className="flex items-center gap-1.5 bg-[var(--gold)] text-[#0B1220] border-none px-4 py-2 rounded-[7px] text-[13px] font-bold no-underline hover:bg-[var(--gold)] transition-colors"
           >
             Teklif Al
           </a>
@@ -85,3 +85,4 @@ export default function Navbar() {
     </header>
   )
 }
+

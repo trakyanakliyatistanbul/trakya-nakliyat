@@ -6,7 +6,7 @@ export default function TrustStats() {
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#A8841E] mb-2">
+          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
             Neden biz
           </div>
           <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
@@ -28,8 +28,8 @@ export default function TrustStats() {
               className="group bg-[#F8F9FA] border border-[#E5E7EB] rounded-[14px] p-4 text-center flex flex-col items-center justify-center gap-1.5 transition-all duration-200 hover:border-[#d1d5db] hover:-translate-y-0.5 cursor-default"
               style={{ minHeight: '84px', boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
             >
-              <div className="w-[34px] h-[34px] bg-white border-[1.5px] border-[#C9A227] rounded-[9px] flex items-center justify-center">
-                <span className="text-[16px] text-[#A8841E]">{getTrustEmoji(item.icon)}</span>
+              <div className="w-[34px] h-[34px] bg-white border-[1.5px] border-[var(--gold)] rounded-[9px] flex items-center justify-center">
+                <span className="text-[16px] text-[var(--gold)]">{getTrustEmoji(item.icon)}</span>
               </div>
               <div className="text-[21px] font-bold text-[#0B1220] leading-[1.15]">{item.value}</div>
               <div className="text-[11.5px] text-[#6b7280]">{item.label}</div>
@@ -52,3 +52,4 @@ function getTrustEmoji(icon: string): string {
   }
   return map[icon] ?? '✓'
 }
+

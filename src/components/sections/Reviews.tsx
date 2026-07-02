@@ -91,7 +91,7 @@ export default function Reviews() {
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-7">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#A8841E] mb-2">
+          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
             Müşteri yorumları
           </div>
           <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
@@ -111,13 +111,13 @@ export default function Reviews() {
         >
           <div className="text-[48px] font-extrabold text-[#0B1220] leading-none">4.9</div>
           <div>
-            <div className="text-[#A8841E] text-[18px] tracking-widest">★★★★★</div>
+            <div className="text-[var(--gold)] text-[18px] tracking-widest">★★★★★</div>
             <div className="text-[12.5px] text-[#6b7280] mt-1">Google yorumlarına dayanarak</div>
             {/* data-href: gerçek Google İşletme Profili URL'si buraya */}
             <a
               href="#"
               data-href="GOOGLE_BUSINESS_URL"
-              className="inline-flex items-center gap-1.5 border border-[#C9A227] px-3 py-1.5 rounded-[8px] text-[11.5px] font-semibold text-[#A8841E] no-underline mt-1.5 hover:bg-[rgba(201,162,39,0.08)] transition-colors"
+              className="inline-flex items-center gap-1.5 border border-[var(--gold)] px-3 py-1.5 rounded-[8px] text-[11.5px] font-semibold text-[var(--gold)] no-underline mt-1.5 hover:bg-[rgba(176,141,87,0.08)] transition-colors"
             >
               🌐 Google&apos;da görüntüle
             </a>
@@ -148,18 +148,18 @@ export default function Reviews() {
                     style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
                   >
                     <div className="flex items-center gap-2.5 mb-3">
-                      <div className="w-[38px] h-[38px] rounded-full bg-[#0B1220] flex items-center justify-center text-[12px] font-bold text-[#D4AF37] flex-shrink-0">
+                      <div className="w-[38px] h-[38px] rounded-full bg-[#0B1220] flex items-center justify-center text-[12px] font-bold text-[var(--gold)] flex-shrink-0">
                         {r.initials}
                       </div>
                       <div>
                         <div className="text-[13.5px] font-bold text-[#0B1220]">{r.name}</div>
-                        <div className="text-[#A8841E] text-[11px] tracking-wide">★★★★★</div>
+                        <div className="text-[var(--gold)] text-[11px] tracking-wide">★★★★★</div>
                         <div className="text-[11px] text-[#9ca3af]">{r.date}</div>
                       </div>
                     </div>
                     <p className="text-[12.5px] text-[#4b5563] leading-[1.65]">{r.text}</p>
                     <div className="flex items-center mt-3">
-                      <div className="flex items-center gap-1 text-[11px] text-[#A8841E]">
+                      <div className="flex items-center gap-1 text-[11px] text-[var(--gold)]">
                         📍 {r.location}
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function Reviews() {
             <button
               onClick={handlePrev}
               aria-label="Önceki"
-              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[#C9A227] hover:bg-[#0B1220] hover:text-[#D4AF37] transition-all duration-150"
+              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0B1220] hover:text-[var(--gold)] transition-all duration-150"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
             >
               ‹
@@ -190,7 +190,7 @@ export default function Reviews() {
                     width: i === current ? '20px' : '6px',
                     height: '6px',
                     borderRadius: i === current ? '3px' : '50%',
-                    background: i === current ? '#C9A227' : '#d1d5db',
+                    background: i === current ? 'var(--gold)' : '#d1d5db',
                     border: 'none',
                     cursor: 'pointer',
                     padding: 0,
@@ -201,7 +201,7 @@ export default function Reviews() {
             <button
               onClick={handleNext}
               aria-label="Sonraki"
-              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[#C9A227] hover:bg-[#0B1220] hover:text-[#D4AF37] transition-all duration-150"
+              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0B1220] hover:text-[var(--gold)] transition-all duration-150"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
             >
               ›
@@ -210,10 +210,11 @@ export default function Reviews() {
 
           {/* Progress */}
           <div className="h-[2px] bg-[#E5E7EB] rounded-full mt-4 overflow-hidden">
-            <div ref={progressRef} className="h-full bg-[#C9A227] rounded-full" style={{ width: '0%' }} />
+            <div ref={progressRef} className="h-full bg-[var(--gold)] rounded-full" style={{ width: '0%' }} />
           </div>
         </div>
       </div>
     </section>
   )
 }
+

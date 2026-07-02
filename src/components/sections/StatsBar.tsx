@@ -11,8 +11,8 @@ export default function StatsBar() {
     <div
       className="bg-[#141d33]"
       style={{
-        borderTop: '1px solid rgba(201,162,39,0.14)',
-        borderBottom: '1px solid rgba(201,162,39,0.14)',
+        borderTop: '1px solid rgba(176,141,87,0.14)',
+        borderBottom: '1px solid rgba(176,141,87,0.14)',
       }}
     >
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
@@ -21,7 +21,7 @@ export default function StatsBar() {
             key={s.label}
             className="py-5 px-4 text-center"
             style={{
-              borderRight: i < stats.length - 1 ? '1px solid rgba(201,162,39,0.1)' : 'none',
+              borderRight: i < stats.length - 1 ? '1px solid rgba(176,141,87,0.1)' : 'none',
             }}
           >
             <div className="text-[16px] font-bold text-white leading-tight">{s.value}</div>
@@ -32,3 +32,4 @@ export default function StatsBar() {
     </div>
   )
 }
+

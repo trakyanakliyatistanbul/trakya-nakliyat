@@ -6,7 +6,7 @@ export default function Services() {
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#A8841E] mb-2">
+          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
             Hizmetlerimiz
           </div>
           <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
@@ -27,18 +27,18 @@ export default function Services() {
               style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
             >
               {/* Hover top accent line */}
-              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[#C9A227] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-[var(--gold)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               {/* Featured badge */}
               {service.featured && (
-                <span className="absolute top-3 right-3 bg-[#0B1220] text-[#D4AF37] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                <span className="absolute top-3 right-3 bg-[#0B1220] text-[var(--gold)] text-[10px] font-bold px-2 py-0.5 rounded-full">
                   En çok tercih
                 </span>
               )}
 
               {/* Icon */}
-              <div className="w-11 h-11 rounded-[11px] bg-white border-[1.5px] border-[#C9A227] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#0B1220] group-hover:border-[#0B1220]">
-                <span className="text-[20px] text-[#A8841E] group-hover:text-[#D4AF37] transition-colors duration-300">
+              <div className="w-11 h-11 rounded-[11px] bg-white border-[1.5px] border-[var(--gold)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#0B1220] group-hover:border-[#0B1220]">
+                <span className="text-[20px] text-[var(--gold)] group-hover:text-[var(--gold)] transition-colors duration-300">
                   {getServiceEmoji(service.icon)}
                 </span>
               </div>
@@ -50,13 +50,13 @@ export default function Services() {
               <div className="border-t border-[#E5E7EB] pt-2.5 flex flex-col gap-1 mb-2.5">
                 {service.perks.map((perk) => (
                   <div key={perk} className="flex items-center gap-1.5 text-[11.5px] text-[#4b5563]">
-                    <span className="text-[#A8841E] text-[12px]">✓</span>
+                    <span className="text-[var(--gold)] text-[12px]">✓</span>
                     {perk}
                   </div>
                 ))}
               </div>
 
-              <div className="flex items-center gap-1 text-[12px] text-[#A8841E] font-semibold transition-all duration-200 group-hover:gap-1.5">
+              <div className="flex items-center gap-1 text-[12px] text-[var(--gold)] font-semibold transition-all duration-200 group-hover:gap-1.5">
                 Detayları gör <span>›</span>
               </div>
             </div>
@@ -78,3 +78,4 @@ function getServiceEmoji(icon: string): string {
   }
   return map[icon] ?? '📋'
 }
+

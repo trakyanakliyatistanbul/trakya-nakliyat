@@ -28,7 +28,7 @@ function AccordionItem({
     <div
       className={`rounded-[13px] border transition-colors duration-200 ${
         isOpen
-          ? 'border-[rgba(201,162,39,0.42)] bg-[#F8F9FA]'
+          ? 'border-[rgba(176,141,87,0.42)] bg-[#F8F9FA]'
           : 'border-[#E5E7EB] bg-[#F8F9FA] hover:border-[#d1d5db]'
       }`}
     >
@@ -39,7 +39,7 @@ function AccordionItem({
       >
         <div
           className={`w-[22px] h-[22px] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors duration-200 ${
-            isOpen ? 'bg-[#C9A227]' : 'bg-[#0B1220]'
+            isOpen ? 'bg-[var(--gold)]' : 'bg-[#0B1220]'
           }`}
         >
           <span className="text-[12px] text-white">✓</span>
@@ -56,7 +56,7 @@ function AccordionItem({
         >
           <span
             className={`text-[14px] transition-all duration-300 ${
-              isOpen ? 'text-[#D4AF37] rotate-180' : 'text-[#9ca3af]'
+              isOpen ? 'text-[var(--gold)] rotate-180' : 'text-[#9ca3af]'
             }`}
             style={{ display: 'inline-block' }}
           >
@@ -72,7 +72,7 @@ function AccordionItem({
         style={{ maxHeight: 0 }}
       >
         <div
-          className="h-px mx-5 bg-[rgba(201,162,39,0.18)]"
+          className="h-px mx-5 bg-[rgba(176,141,87,0.18)]"
         />
         <div ref={innerRef} className="px-5 pb-4 pl-14">
           <p className="text-[13px] text-[#6b7280] leading-[1.7]">{item.answer}</p>
@@ -94,7 +94,7 @@ export default function FAQ() {
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[#A8841E] mb-2">
+          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
             Sık sorulan sorular
           </div>
           <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
@@ -123,7 +123,7 @@ export default function FAQ() {
         <div className="flex flex-wrap items-center gap-3 mt-7">
           <a
             href={SITE_CONFIG.phoneHref}
-            className="inline-flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-5 py-2.5 rounded-[9px] text-[13.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[var(--gold)] px-5 py-2.5 rounded-[9px] text-[13.5px] font-semibold no-underline hover:bg-[var(--gold)] hover:text-[#0B1220] transition-all duration-200"
           >
             📞 {SITE_CONFIG.phone}&apos;yı Ara
           </a>
@@ -131,7 +131,7 @@ export default function FAQ() {
             href={SITE_CONFIG.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-5 py-2.5 rounded-[9px] text-[13.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[var(--gold)] px-5 py-2.5 rounded-[9px] text-[13.5px] font-semibold no-underline hover:bg-[var(--gold)] hover:text-[#0B1220] transition-all duration-200"
           >
             💬 WhatsApp&apos;ta Yaz
           </a>
@@ -140,3 +140,4 @@ export default function FAQ() {
     </section>
   )
 }
+
