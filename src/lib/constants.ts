@@ -23,7 +23,7 @@ export const COLORS = {
   navyMid: '#141d33',
   navyCta: '#0F172A',
   navyCard: '#1a2744',
-  gold: '#C9A227',
-  goldBright: '#D4AF37',
-  goldDeep: '#A8841E',
+  gold: '#B08D57',
+  goldBright: '#B08D57',
+  goldDeep: '#B08D57',
 } as const

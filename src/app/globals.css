@@ -7,12 +7,12 @@
   --navy-mid: #141d33;
   --navy-cta: #0F172A;
   --navy-card: #1a2744;
-  --gold: #C9A227;
-  --gold-bright: #D4AF37;
-  --gold-deep: #A8841E;
-  --gold-pale: rgba(201, 162, 39, 0.12);
-  --border-gold: rgba(201, 162, 39, 0.25);
-  --border-gold-hover: rgba(201, 162, 39, 0.55);
+  --gold: #B08D57;
+  --gold-bright: #B08D57;
+  --gold-deep: #B08D57;
+  --gold-pale: rgba(176, 141, 87, 0.12);
+  --border-gold: rgba(176, 141, 87, 0.25);
+  --border-gold-hover: rgba(176, 141, 87, 0.55);
   --text-on-dark: rgba(255, 255, 255, 0.88);
   --text-on-dark-muted: rgba(255, 255, 255, 0.52);
 }

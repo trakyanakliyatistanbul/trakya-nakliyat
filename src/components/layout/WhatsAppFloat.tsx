@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export default function WhatsAppFloat() {
   return (
-    <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 flex flex-col items-end gap-2">
+    <div className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 flex flex-col items-end gap-2">
       {/* Tooltip */}
       <div className="bg-white border border-[#E5E7EB] rounded-[10px] px-3.5 py-2 text-[12.5px] font-semibold text-[#0B1220] shadow-lg max-w-[calc(100vw-92px)] break-words relative animate-[fadeIn_0.5s_ease_1.2s_both]">
         Hızlı teklif için yazın!
@@ -19,7 +19,7 @@ export default function WhatsAppFloat() {
       </div>
       {/* Pulse ring */}
       <div
-        className="absolute bottom-0 right-0 w-[54px] h-[54px] rounded-full pointer-events-none"
+        className="absolute bottom-0 right-0 w-[44px] h-[44px] rounded-full pointer-events-none"
         style={{
           background: 'rgba(37,211,102,0.3)',
           animation: 'pulse-ring 2.5s ease-out infinite',
@@ -31,7 +31,7 @@ export default function WhatsAppFloat() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp ile iletişim kur"
-        className="relative z-10 w-[54px] h-[54px] rounded-full bg-[#25d366] flex items-center justify-center no-underline hover:scale-110 transition-transform duration-200"
+        className="relative z-10 w-[44px] h-[44px] rounded-full bg-[#25d366] flex items-center justify-center no-underline hover:scale-110 transition-transform duration-200"
         style={{ boxShadow: '0 4px 16px rgba(37,211,102,0.4)' }}
       >
         <svg className="w-7 h-7" fill="white" viewBox="0 0 24 24" aria-hidden="true">
