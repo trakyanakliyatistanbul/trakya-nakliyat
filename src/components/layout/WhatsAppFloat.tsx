@@ -4,9 +4,9 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export default function WhatsAppFloat() {
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+    <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 flex flex-col items-end gap-2">
       {/* Tooltip */}
-      <div className="bg-white border border-[#E5E7EB] rounded-[10px] px-3.5 py-2 text-[12.5px] font-semibold text-[#0B1220] shadow-lg whitespace-nowrap relative animate-[fadeIn_0.5s_ease_1.2s_both]">
+      <div className="bg-white border border-[#E5E7EB] rounded-[10px] px-3.5 py-2 text-[12.5px] font-semibold text-[#0B1220] shadow-lg max-w-[calc(100vw-92px)] break-words relative animate-[fadeIn_0.5s_ease_1.2s_both]">
         Hızlı teklif için yazın!
         <div
           className="absolute right-[-7px] top-1/2 -translate-y-1/2 w-0 h-0"

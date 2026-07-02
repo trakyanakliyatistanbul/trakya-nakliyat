@@ -2,7 +2,7 @@ import { storiesData } from '@/data/storiesData'
 
 export default function MovingStories() {
   return (
-    <section id="hikayeler" className="bg-[#0B1220] py-14 px-10">
+    <section id="hikayeler" className="bg-[#0B1220] py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">

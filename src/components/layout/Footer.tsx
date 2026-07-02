@@ -22,7 +22,7 @@ const regionLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#0B1220] border-t border-[rgba(201,162,39,0.15)]">
-      <div className="max-w-[1320px] mx-auto px-10 pt-12 pb-0">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-0">
         <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-7 pb-10 border-b border-[rgba(201,162,39,0.15)]">
 
           {/* Marka sütunu */}

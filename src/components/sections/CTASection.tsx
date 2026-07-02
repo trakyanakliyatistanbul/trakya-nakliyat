@@ -48,7 +48,7 @@ export default function CTASection() {
         }}
       />
 
-      <div className="max-w-[1200px] mx-auto relative z-10">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-0 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-11 items-center">
 
           {/* Sol */}
@@ -88,7 +88,7 @@ export default function CTASection() {
             <div className="flex flex-wrap gap-3 mb-4">
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="flex flex-col items-center justify-center bg-[#C9A227] text-[#0B1220] no-underline px-6 py-3.5 rounded-[11px] font-bold min-w-[185px] hover:bg-[#D4AF37] hover:scale-[1.03] hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto flex flex-col items-center justify-center bg-[#C9A227] text-[#0B1220] no-underline px-6 py-3.5 rounded-[11px] font-bold min-w-[185px] hover:bg-[#D4AF37] hover:scale-[1.03] hover:-translate-y-0.5 transition-all duration-200"
                 style={{ boxShadow: '0 4px 14px rgba(201,162,39,0.3)' }}
               >
                 <span className="flex items-center gap-1.5 text-[14.5px]">📞 Ücretsiz Ekspertiz İçin Ara</span>
@@ -98,7 +98,7 @@ export default function CTASection() {
                 href={SITE_CONFIG.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] no-underline px-6 py-3.5 rounded-[11px] font-bold min-w-[185px] hover:bg-[#C9A227] hover:border-[#C9A227] hover:scale-[1.03] hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full sm:w-auto flex flex-col items-center justify-center bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] no-underline px-6 py-3.5 rounded-[11px] font-bold min-w-[185px] hover:bg-[#C9A227] hover:border-[#C9A227] hover:scale-[1.03] hover:-translate-y-0.5 transition-all duration-200"
                 style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.16)' }}
               >
                 <span className="flex items-center gap-1.5 text-[14.5px]">💬 WhatsApp&apos;tan Teklif Al</span>

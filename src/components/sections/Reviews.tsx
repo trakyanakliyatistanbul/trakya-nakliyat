@@ -87,7 +87,7 @@ export default function Reviews() {
   const cardWidthPct = 100 / cnt
 
   return (
-    <section className="bg-[#F8F9FA] py-14 px-10">
+    <section className="bg-[#F8F9FA] py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-7">
@@ -106,7 +106,7 @@ export default function Reviews() {
 
         {/* Google skor */}
         <div
-          className="flex flex-wrap items-center gap-5 mb-7 p-4 bg-white border border-[#E5E7EB] rounded-[14px]"
+          className="flex flex-col sm:flex-row sm:items-center flex-wrap items-start gap-4 mb-7 p-4 bg-white border border-[#E5E7EB] rounded-[14px]"
           style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
         >
           <div className="text-[48px] font-extrabold text-[#0B1220] leading-none">4.9</div>
@@ -122,7 +122,7 @@ export default function Reviews() {
               🌐 Google&apos;da görüntüle
             </a>
           </div>
-          <div className="ml-auto flex items-center gap-1.5 text-[11.5px] text-[#9ca3af] bg-[#f3f4f6] px-3 py-1.5 rounded-[8px]">
+          <div className="ml-auto min-w-[220px] flex items-center gap-1.5 text-[11.5px] text-[#9ca3af] bg-[#f3f4f6] px-3 py-1.5 rounded-[8px]">
             ℹ Gerçek Google yorumları entegrasyonu yakında aktif olacak
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function Reviews() {
         >
           <div className="overflow-hidden rounded-[16px]">
             <div
-              className="flex transition-transform duration-[550ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
+              className="flex min-w-full transition-transform duration-[550ms] ease-[cubic-bezier(0.4,0,0.2,1)]"
               style={{ transform: `translateX(-${current * cardWidthPct}%)` }}
             >
               {reviewsData.map((r) => (
@@ -170,7 +170,7 @@ export default function Reviews() {
           </div>
 
           {/* Controls */}
-          <div className="flex items-center justify-center gap-5 mt-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
             <button
               onClick={handlePrev}
               aria-label="Önceki"

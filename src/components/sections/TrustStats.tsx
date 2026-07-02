@@ -2,7 +2,7 @@ import { trustData } from '@/data/trustData'
 
 export default function TrustStats() {
   return (
-    <section className="bg-white py-14 px-10">
+    <section className="bg-white py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">

@@ -2,7 +2,7 @@ import { servicesData } from '@/data/servicesData'
 
 export default function Services() {
   return (
-    <section id="hizmetler" className="bg-[#F8F9FA] py-14 px-10">
+    <section id="hizmetler" className="bg-[#F8F9FA] py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">

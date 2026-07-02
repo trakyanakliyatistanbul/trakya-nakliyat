@@ -34,7 +34,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-[1320px] mx-auto px-10 relative z-10">
+      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-8 items-center">
 
           {/* Sol: Metin */}
@@ -69,10 +69,10 @@ export default function Hero() {
             </p>
 
             {/* Buttons */}
-            <div className="flex flex-wrap gap-3 mb-5">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-5">
               <a
                 href={SITE_CONFIG.phoneHref}
-                className="flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-6 py-3.5 rounded-[10px] text-[14.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-6 py-3.5 rounded-[10px] text-[14.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px"
                 style={{ boxShadow: '0 2px 10px rgba(0,0,0,0.18)' }}
               >
                 <span>📞</span> Hemen Ara
@@ -81,7 +81,7 @@ export default function Hero() {
                 href={SITE_CONFIG.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-6 py-3.5 rounded-[10px] text-[14.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white text-[#0B1220] border-[1.5px] border-[#C9A227] px-6 py-3.5 rounded-[10px] text-[14.5px] font-semibold no-underline hover:bg-[#C9A227] hover:text-[#0B1220] transition-all duration-200 hover:scale-[1.03] hover:-translate-y-px"
                 style={{ boxShadow: '0 2px 10px rgba(0,0,0,0.18)' }}
               >
                 <span>💬</span> WhatsApp&apos;tan Teklif Al

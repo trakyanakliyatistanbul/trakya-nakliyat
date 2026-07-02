@@ -14,7 +14,7 @@ const navLinks = [
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-[#0B1220] border-b border-[rgba(201,162,39,0.18)]">
-      <nav className="max-w-[1320px] mx-auto px-10 h-[76px] flex items-center justify-between">
+      <nav className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 h-[76px] flex items-center justify-between">
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 no-underline">

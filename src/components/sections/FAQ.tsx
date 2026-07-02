@@ -90,7 +90,7 @@ export default function FAQ() {
   }
 
   return (
-    <section id="sss" className="bg-white py-14 px-10">
+    <section id="sss" className="bg-white py-14 px-4 sm:px-6 lg:px-10">
       <div className="max-w-[1320px] mx-auto">
         {/* Header */}
         <div className="mb-9">

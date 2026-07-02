@@ -2,8 +2,8 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export default function WhatsAppStrip() {
   return (
-    <div className="bg-[#0d3d23] px-10 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div className="flex items-center gap-3">
+    <div className="bg-[#0d3d23] px-4 sm:px-6 lg:px-10 py-3 flex flex-wrap sm:flex-nowrap items-center justify-between gap-3">
+      <div className="flex min-w-0 items-center gap-3">
         <span className="text-[#4ade80] text-xl">💬</span>
         <p className="text-[13.5px] text-[rgba(255,255,255,0.85)]">
           Hızlı fiyat almak ister misiniz?{' '}
