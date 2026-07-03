@@ -28,11 +28,6 @@ export default function Hero() {
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 relative z-10">
         <div className="grid gap-8">
           <div className="space-y-6 max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(176,141,87,0.25)] bg-[rgba(176,141,87,0.08)] px-4 py-2 text-[13px] text-[var(--gold)] font-semibold">
-              <span className="w-2.5 h-2.5 rounded-full bg-[var(--gold)]" />
-              Beylikdüzü ve İstanbul genelinde güvenli nakliyat
-            </div>
-
             <h1 className="text-[36px] lg:text-[42px] font-bold leading-[1.08] text-white tracking-tight">
               Beylikdüzü Evden Eve Nakliyat Hizmetinde{' '}
               <em className="not-italic text-[var(--gold)]">Güvenin Adresi</em>

@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
   googleRating: '4.9',
   googleReviewCount: '150+',
   foundedYear: 1994,
-  experience: '23+',
+  experience: '20+ Yıl Deneyim',
 } as const
 
 export const COLORS = {

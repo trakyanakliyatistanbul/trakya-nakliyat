@@ -160,44 +160,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <div className="w-full h-[240px] bg-[#F8F9FA] relative overflow-hidden">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(11,18,32,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(11,18,32,0.04) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-        <div className="flex flex-col items-center justify-center h-full relative z-10">
-          <div
-            className="w-[46px] h-[46px] bg-[#0B1220] flex items-center justify-center animate-pin-bounce"
-            style={{
-              borderRadius: '50% 50% 50% 0',
-              transform: 'rotate(-45deg)',
-              boxShadow: '0 6px 14px rgba(0,0,0,0.18)',
-            }}
-          >
-            <span style={{ transform: 'rotate(45deg)', fontSize: '19px', color: 'var(--gold)' }}>📍</span>
-          </div>
-          <div className="mt-3 bg-white border border-[#E5E7EB] rounded-[10px] px-4 py-2.5 text-center shadow-md">
-            <div className="text-[13px] font-bold text-[#0B1220] mb-0.5">Trakya Nakliyat İstanbul</div>
-            <div className="text-[11.5px] text-[#6b7280]">Beylikdüzü, İstanbul</div>
-            <a
-              href="https://maps.google.com/?q=Beylikdüzü,İstanbul"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 bg-[#0B1220] text-[var(--gold)] no-underline px-3.5 py-1.5 rounded-[7px] text-[11.5px] font-semibold mt-2"
-            >
-              Yol Tarifi Al
-            </a>
-          </div>
-        </div>
-        <button className="absolute top-3.5 right-3.5 bg-white border border-[#E5E7EB] rounded-[8px] px-3 py-1.5 text-[12px] font-semibold text-[var(--gold)] flex items-center gap-1.5 shadow-sm">
-          🗺 Google Maps&apos;te Aç
-        </button>
-      </div>
     </footer>
   )
 }

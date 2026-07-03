@@ -38,8 +38,8 @@ export default function Services() {
 
               {/* Icon */}
               <div className="w-11 h-11 rounded-[11px] bg-white border-[1.5px] border-[var(--gold)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#0B1220] group-hover:border-[#0B1220]">
-                <span className="text-[20px] text-[var(--gold)] group-hover:text-[var(--gold)] transition-colors duration-300">
-                  {getServiceEmoji(service.icon)}
+                <span className="text-[var(--gold)] transition-colors duration-300">
+                  {getServiceIcon(service.icon)}
                 </span>
               </div>
 
@@ -67,15 +67,56 @@ export default function Services() {
   )
 }
 
-function getServiceEmoji(icon: string): string {
-  const map: Record<string, string> = {
-    'home-move': '🏠',
-    'elevator': '🏗',
-    'truck': '🚛',
-    'briefcase': '💼',
-    'archive': '📦',
-    'package': '🗳',
+function getServiceIcon(icon: string) {
+  const icons: Record<string, React.ReactNode> = {
+    'home-move': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 11L12 2l9 9" />
+        <path d="M9 22V12h6v10" />
+        <path d="M21 22H3" />
+      </svg>
+    ),
+    'elevator': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M8 2h8v20H8z" />
+        <path d="M12 6v4" />
+        <path d="M12 14v4" />
+        <path d="M6 10h12" />
+      </svg>
+    ),
+    'truck': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M1 3h15v13H1z" />
+        <path d="M16 8h4l3 3v5H16z" />
+        <circle cx="6.5" cy="18.5" r="2.5" />
+        <circle cx="18.5" cy="18.5" r="2.5" />
+      </svg>
+    ),
+    'briefcase': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="7" width="18" height="13" rx="2" />
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      </svg>
+    ),
+    'archive': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 7h18" />
+        <path d="M5 7v11h14V7" />
+        <path d="M10 11h4" />
+      </svg>
+    ),
+    'package': (
+      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 16V8l-9-5-9 5v8l9 5 9-5z" />
+        <path d="M12 3v18" />
+        <path d="M3.27 6.96l8.73 5.01 8.73-5.01" />
+      </svg>
+    ),
   }
-  return map[icon] ?? '📋'
+  return icons[icon] ?? (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 4h16v16H4z" />
+    </svg>
+  )
 }
 
