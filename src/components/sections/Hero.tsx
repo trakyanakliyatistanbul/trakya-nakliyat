@@ -1,12 +1,51 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement | null>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const handlePlay = async () => {
+    const video = videoRef.current
+    if (!video) return
+
+    try {
+      video.muted = false
+      video.controls = true
+      await video.play()
+      setIsPlaying(true)
+    } catch (error) {
+      console.error('Hero video playback failed', error)
+    }
+  }
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (!video) return
+
+    const handleEnded = () => setIsPlaying(false)
+    const handlePause = () => {
+      if (video.ended) {
+        setIsPlaying(false)
+      }
+    }
+
+    video.addEventListener('ended', handleEnded)
+    video.addEventListener('pause', handlePause)
+
+    return () => {
+      video.removeEventListener('ended', handleEnded)
+      video.removeEventListener('pause', handlePause)
+    }
+  }, [])
+
   return (
     <section
       id="hero"
-      className="bg-[#0B1220] pt-12 lg:pt-16 pb-10 relative overflow-hidden"
+      className="bg-[#0B1220] pt-12 pb-10 relative overflow-hidden lg:pt-16"
     >
-      {/* Grid background */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -15,13 +54,15 @@ export default function Hero() {
           backgroundSize: '48px 48px',
         }}
       />
-      {/* Glow effects */}
       <div
         className="absolute pointer-events-none"
         style={{
-          width: 480, height: 480, borderRadius: '50%',
+          width: 480,
+          height: 480,
+          borderRadius: '50%',
           background: 'radial-gradient(circle, rgba(176,141,87,0.08) 0%, transparent 70%)',
-          top: -180, right: -60,
+          top: -180,
+          right: -60,
         }}
       />
 
@@ -61,22 +102,41 @@ export default function Hero() {
           <div className="relative overflow-hidden rounded-[32px] border border-[rgba(255,255,255,0.12)] bg-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.28)]">
             <div className="relative aspect-[16/9] min-h-[260px] overflow-hidden sm:min-h-[360px] lg:min-h-[470px]">
               <video
+                ref={videoRef}
                 className="absolute inset-0 h-full w-full object-cover object-center"
                 src="/videos/hero-video.mp4"
-                autoPlay
                 muted
-                loop
                 playsInline
                 preload="metadata"
+                controls={false}
                 aria-label="Trakya Nakliyat hizmet tanıtım videosu"
               />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(176,141,87,0.26),transparent_38%),linear-gradient(180deg,rgba(11,18,32,0.08)_0%,rgba(11,18,32,0.72)_100%)]" />
+
+              <div
+                className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+                  isPlaying ? 'pointer-events-none opacity-0' : 'opacity-100'
+                }`}
+              >
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(176,141,87,0.28),transparent_40%),linear-gradient(180deg,rgba(11,18,32,0.14)_0%,rgba(11,18,32,0.78)_100%)]" />
+                <button
+                  type="button"
+                  onClick={handlePlay}
+                  aria-label="Videoyu oynat"
+                  className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(255,255,255,0.2)] bg-[rgba(176,141,87,0.9)] text-white shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-105 hover:bg-[var(--gold)] sm:h-20 sm:w-20"
+                >
+                  <span className="pl-1 text-[22px] sm:text-[26px]">▶</span>
+                </button>
+              </div>
+
               <div className="absolute left-4 top-4 rounded-full border border-[rgba(255,255,255,0.16)] bg-[#0B1220]/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(255,255,255,0.84)] shadow-sm sm:left-6 sm:top-6 sm:px-4 sm:text-[12px]">
                 Premium Taşımacılık
               </div>
+
               <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 lg:p-8">
                 <div className="mx-auto max-w-[620px] rounded-[18px] border border-[rgba(255,255,255,0.14)] bg-[#0B1220]/75 px-4 py-3 text-left text-[13px] leading-6 text-[rgba(255,255,255,0.84)] shadow-[0_16px_45px_rgba(0,0,0,0.24)] sm:text-[14px] sm:px-5">
-                  <p className="font-medium text-white">Profesyonel ekiplerimizle, güvenli, hızlı ve özenli taşımacılık deneyimini ön planda tutuyoruz.</p>
+                  <p className="font-medium text-white">
+                    Profesyonel ekiplerimizle, güvenli, hızlı ve özenli taşımacılık deneyimini ön planda tutuyoruz.
+                  </p>
                 </div>
               </div>
             </div>
