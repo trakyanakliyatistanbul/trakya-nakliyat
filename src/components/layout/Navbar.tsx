@@ -67,7 +67,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-[rgba(176,141,87,0.18)] bg-[#0B1220]">
+      <header className="sticky top-0 z-50 border-b border-[rgba(176,141,87,0.18)] bg-[#0B1220]/95 backdrop-blur-sm">
         <nav className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-10">
           <Link href="/" className="flex items-center gap-3 no-underline">
             <div className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-[9px] bg-[var(--gold)]">
@@ -106,10 +106,8 @@ export default function Navbar() {
                 aria-label="Instagram"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.24)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)] transition-colors duration-150 hover:bg-[rgba(176,141,87,0.16)]"
               >
-                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="5" />
-                  <circle cx="12" cy="12" r="4.2" />
-                  <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
+                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z" />
                 </svg>
               </a>
               <a
@@ -119,9 +117,8 @@ export default function Navbar() {
                 aria-label="YouTube"
                 className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.24)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)] transition-colors duration-150 hover:bg-[rgba(176,141,87,0.16)]"
               >
-                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                  <path d="M21 7.5a3 3 0 0 0-2.12-2.12C17.43 5 12 5 12 5s-5.43 0-6.88.38A3 3 0 0 0 3 7.5 31 31 0 0 0 3 16.5a3 3 0 0 0 2.12 2.12c1.45.38 6.88.38 6.88.38s5.43 0 6.88-.38A3 3 0 0 0 21 16.5a31 31 0 0 0 0-9Z" />
-                  <path d="m10 9.5 5 3-5 3v-6Z" fill="currentColor" stroke="none" />
+                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
                 </svg>
               </a>
               <button
