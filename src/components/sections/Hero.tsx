@@ -99,11 +99,11 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[32px] border border-[rgba(255,255,255,0.12)] bg-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.28)]">
-            <div className="relative aspect-[16/9] min-h-[260px] overflow-hidden sm:min-h-[360px] lg:min-h-[470px]">
+          <div className="relative overflow-hidden rounded-[36px] border border-[rgba(255,255,255,0.14)] bg-[linear-gradient(135deg,rgba(11,18,32,0.95),rgba(18,28,45,0.92))] shadow-[0_48px_120px_rgba(0,0,0,0.34)]">
+            <div className="relative mx-auto flex aspect-[9/16] max-h-[760px] min-h-[320px] w-full max-w-[480px] items-center justify-center overflow-hidden rounded-[28px] border border-[rgba(255,255,255,0.08)] bg-[#060B14] p-2 sm:min-h-[420px] sm:max-w-[520px] sm:p-3 lg:aspect-[9/16] lg:min-h-[620px] lg:max-w-[560px] lg:p-4">
               <video
                 ref={videoRef}
-                className="absolute inset-0 h-full w-full object-cover object-center"
+                className="h-full w-full rounded-[22px] object-contain object-center bg-[#060B14]"
                 src="/videos/hero-video.mp4"
                 muted
                 playsInline
@@ -113,31 +113,31 @@ export default function Hero() {
               />
 
               <div
-                className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+                className={`absolute inset-0 flex items-center justify-center rounded-[28px] transition-all duration-300 ${
                   isPlaying ? 'pointer-events-none opacity-0' : 'opacity-100'
                 }`}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(176,141,87,0.28),transparent_40%),linear-gradient(180deg,rgba(11,18,32,0.14)_0%,rgba(11,18,32,0.78)_100%)]" />
+                <div className="absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_center,_rgba(176,141,87,0.2),transparent_55%),linear-gradient(180deg,rgba(6,11,20,0.18)_0%,rgba(6,11,20,0.82)_100%)]" />
                 <button
                   type="button"
                   onClick={handlePlay}
                   aria-label="Videoyu oynat"
-                  className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full border border-[rgba(255,255,255,0.2)] bg-[rgba(176,141,87,0.9)] text-white shadow-[0_20px_50px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:scale-105 hover:bg-[var(--gold)] sm:h-20 sm:w-20"
+                  className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full border border-[rgba(255,255,255,0.2)] bg-[rgba(176,141,87,0.95)] text-white shadow-[0_24px_60px_rgba(0,0,0,0.4)] transition-transform duration-200 hover:scale-105 hover:bg-[var(--gold)] sm:h-24 sm:w-24"
                 >
-                  <span className="pl-1 text-[22px] sm:text-[26px]">▶</span>
+                  <span className="pl-1 text-[24px] sm:text-[28px]">▶</span>
                 </button>
               </div>
 
-              <div className="absolute left-4 top-4 rounded-full border border-[rgba(255,255,255,0.16)] bg-[#0B1220]/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(255,255,255,0.84)] shadow-sm sm:left-6 sm:top-6 sm:px-4 sm:text-[12px]">
+              <div className="absolute left-3 top-3 rounded-full border border-[rgba(255,255,255,0.16)] bg-[#0B1220]/70 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-[rgba(255,255,255,0.84)] shadow-sm sm:left-4 sm:top-4 sm:px-4 sm:text-[12px]">
                 Premium Taşımacılık
               </div>
+            </div>
 
-              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 lg:p-8">
-                <div className="mx-auto max-w-[620px] rounded-[18px] border border-[rgba(255,255,255,0.14)] bg-[#0B1220]/75 px-4 py-3 text-left text-[13px] leading-6 text-[rgba(255,255,255,0.84)] shadow-[0_16px_45px_rgba(0,0,0,0.24)] sm:text-[14px] sm:px-5">
-                  <p className="font-medium text-white">
-                    Profesyonel ekiplerimizle, güvenli, hızlı ve özenli taşımacılık deneyimini ön planda tutuyoruz.
-                  </p>
-                </div>
+            <div className="px-4 pb-4 pt-4 sm:px-6 sm:pb-6 lg:px-8 lg:pb-8">
+              <div className="mx-auto max-w-[760px] rounded-[20px] border border-[rgba(255,255,255,0.14)] bg-[#0B1220]/75 px-4 py-3 text-left text-[13px] leading-6 text-[rgba(255,255,255,0.84)] shadow-[0_16px_45px_rgba(0,0,0,0.24)] sm:text-[14px] sm:px-5">
+                <p className="font-medium text-white">
+                  Profesyonel ekiplerimizle, güvenli, hızlı ve özenli taşımacılık deneyimini ön planda tutuyoruz.
+                </p>
               </div>
             </div>
           </div>
