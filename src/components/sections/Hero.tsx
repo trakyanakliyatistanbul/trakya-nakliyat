@@ -58,19 +58,26 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[28px] border border-[rgba(255,255,255,0.08)] bg-white/5 shadow-[0_32px_80px_rgba(0,0,0,0.22)]">
-            <div className="aspect-[16/9] min-h-[220px] bg-[radial-gradient(circle_at_top,_rgba(176,141,87,0.16),transparent_35%),linear-gradient(135deg,rgba(255,255,255,0.08),transparent)]" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <button
-                aria-label="Video oynat"
-                className="flex h-16 w-16 items-center justify-center rounded-full bg-[rgba(176,141,87,0.18)] text-white shadow-[0_18px_40px_rgba(0,0,0,0.25)] ring-1 ring-[rgba(176,141,87,0.35)] transition-transform duration-200 hover:scale-105 hover:bg-[var(--gold)]"
-              >
-                <span className="text-[22px]">▶</span>
-              </button>
-            </div>
-            <div className="absolute inset-x-0 bottom-0 px-6 pb-6">
-              <div className="mx-auto max-w-[640px] rounded-[18px] border border-[rgba(255,255,255,0.12)] bg-[#0B1220]/70 px-4 py-3 text-center text-[14px] text-[rgba(255,255,255,0.82)] shadow-sm">
-                Yakında gelecek tanıtım video veya premium görsel alanı.
+          <div className="relative overflow-hidden rounded-[32px] border border-[rgba(255,255,255,0.12)] bg-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.28)]">
+            <div className="relative aspect-[16/9] min-h-[260px] overflow-hidden sm:min-h-[360px] lg:min-h-[470px]">
+              <video
+                className="absolute inset-0 h-full w-full object-cover object-center"
+                src="/videos/hero-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Trakya Nakliyat hizmet tanıtım videosu"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(176,141,87,0.26),transparent_38%),linear-gradient(180deg,rgba(11,18,32,0.08)_0%,rgba(11,18,32,0.72)_100%)]" />
+              <div className="absolute left-4 top-4 rounded-full border border-[rgba(255,255,255,0.16)] bg-[#0B1220]/70 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(255,255,255,0.84)] shadow-sm sm:left-6 sm:top-6 sm:px-4 sm:text-[12px]">
+                Premium Taşımacılık
+              </div>
+              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 lg:p-8">
+                <div className="mx-auto max-w-[620px] rounded-[18px] border border-[rgba(255,255,255,0.14)] bg-[#0B1220]/75 px-4 py-3 text-left text-[13px] leading-6 text-[rgba(255,255,255,0.84)] shadow-[0_16px_45px_rgba(0,0,0,0.24)] sm:text-[14px] sm:px-5">
+                  <p className="font-medium text-white">Profesyonel ekiplerimizle, güvenli, hızlı ve özenli taşımacılık deneyimini ön planda tutuyoruz.</p>
+                </div>
               </div>
             </div>
           </div>
