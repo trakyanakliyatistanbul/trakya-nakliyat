@@ -5,28 +5,37 @@ import { reviewsData } from '@/data/reviewsData'
 
 const INTERVAL = 6000
 
+const getVisibleCount = (width: number) => {
+  if (width >= 900) return 3
+  if (width >= 560) return 2
+  return 1
+}
+
 export default function Reviews() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [cnt, setCnt] = useState(3)
   const progressRef = useRef<HTMLDivElement>(null)
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const startTimeRef = useRef<number>(0)
   const remainingRef = useRef<number>(INTERVAL)
   const animFrameRef = useRef<number>(0)
 
-  function visibleCount() {
-    if (typeof window === 'undefined') return 3
-    if (window.innerWidth >= 900) return 3
-    if (window.innerWidth >= 560) return 2
-    return 1
-  }
-
-  const totalPages = useCallback(() => {
-    return Math.max(1, reviewsData.length - visibleCount() + 1)
+  useEffect(() => {
+    const updateCount = () => setCnt(getVisibleCount(window.innerWidth))
+    updateCount()
+    window.addEventListener('resize', updateCount)
+    return () => window.removeEventListener('resize', updateCount)
   }, [])
 
+  const totalPages = Math.max(1, reviewsData.length - cnt + 1)
+
+  useEffect(() => {
+    setCurrent((value) => Math.min(value, totalPages - 1))
+  }, [totalPages])
+
   const goTo = useCallback((idx: number) => {
-    const pages = totalPages()
+    const pages = totalPages
     setCurrent(((idx % pages) + pages) % pages)
   }, [totalPages])
 
@@ -52,7 +61,7 @@ export default function Reviews() {
     startTimeRef.current = performance.now()
     startProgress(duration)
     timerRef.current = setTimeout(() => {
-      setCurrent((c) => (c + 1) % totalPages())
+      setCurrent((c) => (c + 1) % totalPages)
       resetAuto()
     }, duration)
   }, [totalPages])
@@ -83,7 +92,6 @@ export default function Reviews() {
   function handlePrev() { goTo(current - 1); resetAuto() }
   function handleNext() { goTo(current + 1); resetAuto() }
 
-  const cnt = typeof window !== 'undefined' ? visibleCount() : 3
   const cardWidthPct = 100 / cnt
 
   return (
@@ -180,7 +188,7 @@ export default function Reviews() {
               ‹
             </button>
             <div className="flex items-center gap-1.5">
-              {Array.from({ length: totalPages() }).map((_, i) => (
+              {Array.from({ length: totalPages }).map((_, i) => (
                 <button
                   key={i}
                   onClick={() => { goTo(i); resetAuto() }}

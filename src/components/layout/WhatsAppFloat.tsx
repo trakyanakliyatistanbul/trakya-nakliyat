@@ -4,19 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export default function WhatsAppFloat() {
   return (
-    <div className="fixed bottom-[calc(1.5rem+env(safe-area-inset-bottom))] sm:bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 flex flex-col items-end gap-2">
-      {/* Tooltip */}
-      <div className="bg-white border border-[#E5E7EB] rounded-[10px] px-3.5 py-2 text-[12.5px] font-semibold text-[#0B1220] shadow-lg max-w-[calc(100vw-92px)] break-words relative animate-[fadeIn_0.5s_ease_1.2s_both]">
-        Hızlı teklif için yazın!
-        <div
-          className="absolute right-[-7px] top-1/2 -translate-y-1/2 w-0 h-0"
-          style={{
-            borderTop: '6px solid transparent',
-            borderBottom: '6px solid transparent',
-            borderLeft: '7px solid white',
-          }}
-        />
-      </div>
+    <div className="fixed left-[calc(1rem+env(safe-area-inset-left))] sm:right-[calc(1rem+env(safe-area-inset-right))] sm:left-auto bottom-[calc(5.5rem+env(safe-area-inset-bottom))] sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-50">
       {/* Pulse ring */}
       <div
         className="absolute bottom-0 right-0 w-[44px] h-[44px] rounded-full pointer-events-none"

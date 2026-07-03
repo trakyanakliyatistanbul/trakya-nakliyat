@@ -3,7 +3,6 @@ import Footer from '@/components/layout/Footer'
 import WhatsAppFloat from '@/components/layout/WhatsAppFloat'
 import Hero from '@/components/sections/Hero'
 import StatsBar from '@/components/sections/StatsBar'
-import WhatsAppStrip from '@/components/sections/WhatsAppStrip'
 import Services from '@/components/sections/Services'
 import TrustStats from '@/components/sections/TrustStats'
 import Reviews from '@/components/sections/Reviews'
@@ -18,7 +17,6 @@ export default function HomePage() {
       <main>
         <Hero />
         <StatsBar />
-        <WhatsAppStrip />
         <Services />
         <TrustStats />
         <Reviews />
