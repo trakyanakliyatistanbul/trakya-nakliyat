@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 
 const navLinks = [
@@ -11,78 +12,233 @@ const navLinks = [
   { label: 'İletişim', href: '#iletisim' },
 ]
 
+const drawerSections = [
+  {
+    id: 'hizmetler',
+    label: 'Hizmetler',
+    items: [
+      'Evden Eve Nakliyat',
+      'Asansörlü Nakliyat',
+      'Şehirlerarası Nakliyat',
+      'Ofis Taşıma',
+      'Parça Eşya Taşıma',
+      'Eşya Depolama',
+    ],
+  },
+  {
+    id: 'kurumsal',
+    label: 'Kurumsal',
+    items: ['Hakkımızda', 'Müşteri Yorumları', 'Sık Sorulan Sorular'],
+  },
+  {
+    id: 'medya',
+    label: 'Medya',
+    items: ['Fotoğraf Galerisi', 'Video Galerisi', 'Taşınma Hikâyeleri', 'Blog'],
+  },
+]
+
 export default function Navbar() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
+  const [openSections, setOpenSections] = useState<string[]>(['hizmetler'])
+
+  useEffect(() => {
+    if (!isDrawerOpen) return
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setIsDrawerOpen(false)
+    }
+
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isDrawerOpen])
+
+  const toggleSection = (sectionId: string) => {
+    setOpenSections((current) =>
+      current.includes(sectionId)
+        ? current.filter((id) => id !== sectionId)
+        : [...current, sectionId],
+    )
+  }
+
   return (
-    <header className="sticky top-0 z-50 bg-[#0B1220] border-b border-[rgba(176,141,87,0.18)]">
-      <nav className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 h-[76px] flex items-center justify-between">
+    <>
+      <header className="sticky top-0 z-50 border-b border-[rgba(176,141,87,0.18)] bg-[#0B1220]">
+        <nav className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-10">
+          <Link href="/" className="flex items-center gap-3 no-underline">
+            <div className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-[9px] bg-[var(--gold)]">
+              <span className="text-[15px] font-black tracking-tight text-[#0B1220]">TN</span>
+            </div>
+            <div className="h-9 w-px rounded-sm bg-[rgba(176,141,87,0.3)]" />
+            <div className="flex flex-col justify-center">
+              <span className="text-[17px] font-extrabold leading-tight tracking-tight text-white">
+                TRAKYA <span className="text-[var(--gold)]">NAKLİYAT</span>
+              </span>
+              <span className="mt-0.5 text-[9px] uppercase tracking-[1.2px] text-[rgba(255,255,255,0.42)]">
+                İstanbul · Evden Eve Nakliyat
+              </span>
+            </div>
+          </Link>
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 no-underline">
-          <div className="w-[42px] h-[42px] bg-[var(--gold)] rounded-[9px] flex items-center justify-center flex-shrink-0">
-            <span className="text-[15px] font-black text-[#0B1220] tracking-tight">TN</span>
-          </div>
-          <div className="w-px h-9 bg-[rgba(176,141,87,0.3)] rounded-sm" />
-          <div className="flex flex-col justify-center">
-            <span className="text-[17px] font-extrabold text-white tracking-tight leading-tight">
-              TRAKYA <span className="text-[var(--gold)]">NAKLİYAT</span>
-            </span>
-            <span className="text-[9px] text-[rgba(255,255,255,0.42)] uppercase tracking-[1.2px] mt-0.5">
-              İstanbul · Evden Eve Nakliyat
-            </span>
-          </div>
-        </Link>
+          <ul className="hidden items-center gap-0.5 list-none md:flex">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="rounded-md px-3 py-1.5 text-[13.5px] text-[rgba(255,255,255,0.60)] no-underline transition-colors duration-150 hover:text-[var(--gold)]"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Nav links */}
-        <ul className="hidden md:flex items-center gap-0.5 list-none">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className="text-[rgba(255,255,255,0.60)] no-underline text-[13.5px] px-3 py-1.5 rounded-md hover:text-[var(--gold)] transition-colors duration-150"
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 md:hidden">
+              <a
+                href={SITE_CONFIG.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.24)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)] transition-colors duration-150 hover:bg-[rgba(176,141,87,0.16)]"
               >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4.2" />
+                  <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href={SITE_CONFIG.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.24)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)] transition-colors duration-150 hover:bg-[rgba(176,141,87,0.16)]"
+              >
+                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M21 7.5a3 3 0 0 0-2.12-2.12C17.43 5 12 5 12 5s-5.43 0-6.88.38A3 3 0 0 0 3 7.5 31 31 0 0 0 3 16.5a3 3 0 0 0 2.12 2.12c1.45.38 6.88.38 6.88.38s5.43 0 6.88-.38A3 3 0 0 0 21 16.5a31 31 0 0 0 0-9Z" />
+                  <path d="m10 9.5 5 3-5 3v-6Z" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <button
+                type="button"
+                aria-label="Menüyü aç"
+                onClick={() => setIsDrawerOpen(true)}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.24)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)] transition-colors duration-150 hover:bg-[rgba(176,141,87,0.16)]"
+              >
+                <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                  <path d="M4 7h16" />
+                  <path d="M4 12h16" />
+                  <path d="M4 17h16" />
+                </svg>
+              </button>
+            </div>
 
-        {/* CTA buttons */}
-        <div className="flex items-center gap-2">
-          {/* Instagram */}
-          <a
-            href="https://instagram.com/trakyanakliyatistanbul"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="flex items-center gap-2 text-[#0B1220] bg-[var(--gold)] border border-[var(--gold)] px-3.5 py-2 rounded-[7px] text-[13px] no-underline hover:bg-[#a57b4d] hover:border-[#a57b4d] transition-colors"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-            <span className="hidden sm:inline">Instagram</span>
-          </a>
-          {/* WhatsApp */}
-          <a
-            href={SITE_CONFIG.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden sm:flex items-center gap-1.5 text-[#4ade80] border border-[rgba(74,222,128,0.35)] px-3.5 py-2 rounded-[7px] text-[13px] no-underline hover:bg-[rgba(74,222,128,0.08)] transition-colors"
-          >
-            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.55 4.103 1.514 5.829L0 24l6.335-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.369l-.36-.213-3.721.869.94-3.63-.234-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z"/>
-            </svg>
-            WhatsApp
-          </a>
-          <a
-            href={SITE_CONFIG.phoneHref}
-            className="flex items-center gap-1.5 bg-[var(--gold)] text-[#0B1220] border-none px-4 py-2 rounded-[7px] text-[13px] font-bold no-underline hover:bg-[var(--gold)] transition-colors"
-          >
-            Teklif Al
-          </a>
-        </div>
-      </nav>
-    </header>
+            <div className="hidden items-center gap-2 md:flex">
+              <a
+                href={SITE_CONFIG.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden items-center gap-1.5 rounded-[7px] border border-[rgba(74,222,128,0.35)] px-3.5 py-2 text-[13px] text-[#4ade80] no-underline transition-colors hover:bg-[rgba(74,222,128,0.08)] sm:flex"
+              >
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.55 4.103 1.514 5.829L0 24l6.335-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.369l-.36-.213-3.721.869.94-3.63-.234-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                </svg>
+                WhatsApp
+              </a>
+              <a
+                href={SITE_CONFIG.phoneHref}
+                className="flex items-center gap-1.5 rounded-[7px] border-none bg-[var(--gold)] px-4 py-2 text-[13px] font-bold text-[#0B1220] no-underline transition-colors hover:bg-[var(--gold)]"
+              >
+                Teklif Al
+              </a>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <div
+        className={`fixed inset-0 z-[60] transition-opacity duration-300 ${isDrawerOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
+        onClick={() => setIsDrawerOpen(false)}
+      >
+        <div className="absolute inset-0 bg-[rgba(3,7,18,0.62)] backdrop-blur-[2px]" />
+        <aside
+          className={`absolute right-0 top-0 flex h-full w-[88vw] max-w-[360px] flex-col border-l border-[rgba(176,141,87,0.2)] bg-[#0B1220] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.36)] transition-transform duration-300 ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          onClick={(event) => event.stopPropagation()}
+        >
+          <div className="flex items-center justify-between border-b border-[rgba(176,141,87,0.16)] pb-4">
+            <div>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(255,255,255,0.46)]">Menü</p>
+              <p className="mt-1 text-[16px] font-semibold text-white">Trakya Nakliyat</p>
+            </div>
+            <button
+              type="button"
+              aria-label="Menüyü kapat"
+              onClick={() => setIsDrawerOpen(false)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.22)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)]"
+            >
+              <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <path d="M6 6l12 12" />
+                <path d="M18 6 6 18" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="mt-5 flex-1 space-y-2 overflow-y-auto pb-5">
+            <Link
+              href="/"
+              onClick={() => setIsDrawerOpen(false)}
+              className="flex items-center justify-between rounded-[14px] border border-[rgba(176,141,87,0.14)] bg-[rgba(176,141,87,0.06)] px-4 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[rgba(176,141,87,0.12)]"
+            >
+              <span>Ana Sayfa</span>
+              <span className="text-[var(--gold)]">→</span>
+            </Link>
+
+            {drawerSections.map((section) => (
+              <div key={section.id} className="rounded-[14px] border border-[rgba(176,141,87,0.14)] bg-[rgba(255,255,255,0.03)] px-3 py-2">
+                <button
+                  type="button"
+                  onClick={() => toggleSection(section.id)}
+                  className="flex w-full items-center justify-between rounded-[10px] px-2 py-2 text-left text-[14px] font-semibold text-white"
+                >
+                  <span>{section.label}</span>
+                  <span className="text-[var(--gold)]">{openSections.includes(section.id) ? '−' : '+'}</span>
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${openSections.includes(section.id) ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <div className="space-y-1 px-2 pb-2 pt-1">
+                    {section.items.map((item) => (
+                      <Link
+                        key={item}
+                        href="/"
+                        onClick={() => setIsDrawerOpen(false)}
+                        className="block rounded-[10px] px-3 py-2 text-[13px] text-[rgba(255,255,255,0.76)] transition-colors hover:bg-[rgba(176,141,87,0.08)] hover:text-[var(--gold)]"
+                      >
+                        {item}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+
+            <a
+              href={SITE_CONFIG.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsDrawerOpen(false)}
+              className="mt-2 flex items-center justify-center rounded-[14px] border border-[rgba(74,222,128,0.28)] bg-[rgba(74,222,128,0.08)] px-4 py-3 text-[14px] font-semibold text-[#9ef8b3] transition-colors hover:bg-[rgba(74,222,128,0.14)]"
+            >
+              WhatsApp&apos;tan Teklif Al
+            </a>
+          </div>
+        </aside>
+      </div>
+    </>
   )
 }
 

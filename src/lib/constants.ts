@@ -9,6 +9,7 @@ export const SITE_CONFIG = {
   email: 'trakyanakliyatistanbul@gmail.com',
   emailHref: 'mailto:trakyanakliyatistanbul@gmail.com',
   instagram: 'https://instagram.com/trakyanakliyatistanbul',
+  youtube: 'https://www.youtube.com/',
   instagramHandle: '@trakyanakliyatistanbul',
   address: 'Beylikdüzü, İstanbul',
   workingHours: 'Pzt–Paz · 07:00–22:00',
