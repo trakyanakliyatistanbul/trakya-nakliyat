@@ -135,24 +135,28 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="hidden items-center gap-2 md:flex">
+            <div className="hidden items-center gap-3 md:flex">
               <a
-                href={SITE_CONFIG.whatsapp}
+                href={SITE_CONFIG.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden items-center gap-1.5 rounded-[7px] border border-[rgba(74,222,128,0.35)] px-3.5 py-2 text-[13px] text-[#4ade80] no-underline transition-colors hover:bg-[rgba(74,222,128,0.08)] sm:flex"
+                aria-label="Instagram"
+                className="flex items-center justify-center text-[#C8A66A] transition-all duration-250 hover:scale-110 hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:bg-clip-text hover:text-transparent"
               >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.55 4.103 1.514 5.829L0 24l6.335-1.479A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.006-1.369l-.36-.213-3.721.869.94-3.63-.234-.373A9.818 9.818 0 012.182 12C2.182 6.58 6.58 2.182 12 2.182S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z" />
                 </svg>
-                WhatsApp
               </a>
               <a
-                href={SITE_CONFIG.phoneHref}
-                className="flex items-center gap-1.5 rounded-[7px] border-none bg-[var(--gold)] px-4 py-2 text-[13px] font-bold text-[#0B1220] no-underline transition-colors hover:bg-[var(--gold)]"
+                href={SITE_CONFIG.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex items-center justify-center text-[#C8A66A] transition-all duration-250 hover:scale-110 hover:text-[#FF0000]"
               >
-                Teklif Al
+                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                  <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
+                </svg>
               </a>
             </div>
           </div>
