@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   whatsapp: 'https://wa.me/905449993466',
   email: 'trakyanakliyatistanbul@gmail.com',
   emailHref: 'mailto:trakyanakliyatistanbul@gmail.com',
-  instagram: 'https://instagram.com/trakyanakliyatistanbul',
+  instagram: 'https://www.instagram.com/',
   youtube: 'https://www.youtube.com/',
   instagramHandle: '@trakyanakliyatistanbul',
   address: 'Beylikdüzü, İstanbul',
