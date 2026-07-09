@@ -75,30 +75,32 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'MovingCompany',
-              name: 'RÜÇHANOĞLU NAKLİYAT',
-              url: 'https://www.ruchanoglunakliyat.com',
-              telephone: '+905449993466',
-              email: 'ruchanoglunakliyat@gmail.com',
-              address: {
-                '@type': 'PostalAddress',
-                addressLocality: 'Beylikdüzü',
-                addressRegion: 'İstanbul',
-                addressCountry: 'TR',
-              },
-              openingHours: 'Mo-Su 07:00-22:00',
-              priceRange: '₺₺',
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.9',
-                bestRating: '5',
-                ratingCount: '150',
-              },
-              sameAs: [
-                'https://instagram.com/ruchanoglunakliyat'            }),
-          }}
+  __html: JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'MovingCompany',
+    name: 'RÜÇHANOĞLU NAKLİYAT',
+    url: 'https://www.ruchanoglunakliyat.com',
+    telephone: '+905449993466',
+    email: 'ruchanoglunakliyat@gmail.com',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Beylikdüzü',
+      addressRegion: 'İstanbul',
+      addressCountry: 'TR',
+    },
+    openingHours: 'Mo-Su 07:00-22:00',
+    priceRange: '₺₺',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      bestRating: '5',
+      ratingCount: '150',
+    },
+    sameAs: [
+      'https://instagram.com/ruchanoglunakliyat',
+    ],
+  }),
+}}
         />
       </head>
       <body>{children}</body>
