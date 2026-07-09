@@ -13,7 +13,7 @@ export default function MovingStories() {
             Yaptığımız Taşımalar
           </h2>
           <p className="text-[14.5px] text-[rgba(255,255,255,0.52)] leading-[1.7] max-w-[540px]">
-            Her taşıma bir hikaye. Trakya Nakliyat İstanbul olarak fotoğraf ve videolarla
+            Her taşıma bir hikaye. RÜÇHANOĞLU NAKLİYAT olarak fotoğraf ve videolarla
             belgelediğimiz gerçek süreçler.
           </p>
         </div>

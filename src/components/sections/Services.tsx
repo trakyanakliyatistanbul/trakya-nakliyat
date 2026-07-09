@@ -10,7 +10,7 @@ export default function Services() {
             Hizmetlerimiz
           </div>
           <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
-            Trakya Nakliyat İstanbul ile her ihtiyaca uygun çözüm
+            RÜÇHANOĞLU NAKLİYAT ile her ihtiyaca uygun çözüm
           </h2>
           <p className="text-[14.5px] text-[#6b7280] leading-[1.7] max-w-[640px]">
             Beylikdüzü ve İstanbul genelinde evden eve nakliyattan şehirlerarası taşımaya,

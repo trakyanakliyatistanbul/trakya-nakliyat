@@ -7,7 +7,7 @@ export const reviewsData: Review[] = [
     name: 'Ahmet K.',
     rating: 5,
     date: '2 hafta önce',
-    text: "Beylikdüzü evden eve nakliyat hizmeti için Trakya Nakliyat İstanbul'u tercih ettik. Eşyalarımız özenle paketlendi ve zamanında teslim edildi. Sürecin tamamı çok profesyoneldi.",
+    text: "Beylikdüzü evden eve nakliyat hizmeti için RÜÇHANOĞLU NAKLİYAT'ı tercih ettik. Eşyalarımız özenle paketlendi ve zamanında teslim edildi. Sürecin tamamı çok profesyoneldi.",
     location: 'Beylikdüzü',
   },
   {
@@ -70,7 +70,7 @@ export const reviewsData: Review[] = [
     name: 'Fatma S.',
     rating: 5,
     date: '2 hafta önce',
-    text: 'Trakya Nakliyat İstanbul ekibi gerçekten güven veren bir firma. Profesyonel paketleme sayesinde en hassas eşyalarımız bile zarar görmeden taşındı.',
+    text: 'RÜÇHANOĞLU NAKLİYAT ekibi gerçekten güven veren bir firma. Profesyonel paketleme sayesinde en hassas eşyalarımız bile zarar görmeden taşındı.',
     location: 'Büyükçekmece',
   },
   {
@@ -79,7 +79,7 @@ export const reviewsData: Review[] = [
     name: 'Emre K.',
     rating: 5,
     date: '3 hafta önce',
-    text: "Avcılar'dan Beylikdüzü'ne taşınırken Trakya Nakliyat İstanbul ekibi tüm süreci profesyonel şekilde yönetti. Paketleme ve taşıma gerçekten çok başarılıydı.",
+    text: "Avcılar'dan Beylikdüzü'ne taşınırken RÜÇHANOĞLU NAKLİYAT ekibi tüm süreci profesyonel şekilde yönetti. Paketleme ve taşıma gerçekten çok başarılıydı.",
     location: 'Avcılar',
   },
   {

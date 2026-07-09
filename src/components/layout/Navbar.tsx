@@ -175,7 +175,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between border-b border-[rgba(176,141,87,0.16)] pb-4">
             <div>
               <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(255,255,255,0.46)]">Menü</p>
-              <p className="mt-1 text-[16px] font-semibold text-white">Trakya Nakliyat</p>
+              <p className="mt-1 text-[16px] font-semibold text-white">RÜÇHANOĞLU NAKLİYAT</p>
             </div>
             <button
               type="button"

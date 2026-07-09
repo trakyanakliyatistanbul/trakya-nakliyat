@@ -152,7 +152,7 @@ export default function Footer() {
 
         {/* Alt bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between py-3.5 gap-2 text-[11.5px] text-[rgba(255,255,255,0.26)]">
-          <span>© 2025 Trakya Nakliyat İstanbul. Tüm hakları saklıdır.</span>
+          <span>© 2025 RÜÇHANOĞLU NAKLİYAT. Tüm hakları saklıdır.</span>
           <div className="flex gap-4">
             <Link href="/kvkk" className="text-[rgba(255,255,255,0.26)] no-underline hover:text-[var(--gold)] transition-colors">KVKK</Link>
             <Link href="/gizlilik" className="text-[rgba(255,255,255,0.26)] no-underline hover:text-[var(--gold)] transition-colors">Gizlilik politikası</Link>

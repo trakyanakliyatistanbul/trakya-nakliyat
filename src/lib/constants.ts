@@ -1,6 +1,6 @@
 export const SITE_CONFIG = {
-  name: 'Trakya Nakliyat İstanbul',
-  shortName: 'Trakya Nakliyat',
+  name: 'RÜÇHANOĞLU NAKLİYAT',
+  shortName: 'RÜÇHANOĞLU',
   tagline: 'Asansörlü Evden Eve Nakliyat',
   url: 'https://www.trakyanakliyatistanbul.com',
   phone: '0544 999 34 66',

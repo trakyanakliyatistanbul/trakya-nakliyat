@@ -13,7 +13,7 @@ export default function TrustStats() {
             Rakamlarla Güven
           </h2>
           <p className="text-[14.5px] text-[#6b7280] leading-[1.7] max-w-[680px]">
-            Trakya Nakliyat İstanbul olarak Beylikdüzü başta olmak üzere İstanbul genelinde
+            RÜÇHANOĞLU NAKLİYAT olarak Beylikdüzü başta olmak üzere İstanbul genelinde
             güvenilir, profesyonel ve müşteri odaklı nakliyat hizmeti sunuyoruz; asansörlü nakliyat
             sistemimiz, modern paketleme anlayışımız ve deneyimli ekibimizle eşyalarınızı güvenle
             yeni adresinize ulaştırıyoruz.

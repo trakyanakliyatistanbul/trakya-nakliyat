@@ -75,7 +75,7 @@ export default function Hero() {
             </h1>
 
             <p className="text-[15px] text-[rgba(255,255,255,0.75)] leading-[1.8] max-w-[600px]">
-              <strong className="text-white font-semibold">Trakya Nakliyat İstanbul</strong> olarak
+              <strong className="text-white font-semibold">RÜÇHANOĞLU NAKLİYAT</strong> olarak
               İstanbul genelinde profesyonel evden eve nakliyat, asansörlü taşıma ve sigortalı hizmet sunuyoruz.
               Deneyimli ekiplerimizle eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
             </p>

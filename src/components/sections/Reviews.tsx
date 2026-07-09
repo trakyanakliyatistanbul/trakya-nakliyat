@@ -106,7 +106,7 @@ export default function Reviews() {
             Müşterilerimiz Ne Diyor?
           </h2>
           <p className="text-[14px] text-[#6b7280] leading-[1.7] max-w-[640px]">
-            Trakya Nakliyat İstanbul olarak en büyük referansımız, memnuniyetini bizimle paylaşan
+            RÜÇHANOĞLU NAKLİYAT olarak en büyük referansımız, memnuniyetini bizimle paylaşan
             müşterilerimizdir. Şimdilik örnek müşteri yorumları gösterilmektedir. İlerleyen aşamada
             bu bölüm Google İşletme Profilimizden alınan gerçek yorumlarla otomatik güncellenecektir.
           </p>
