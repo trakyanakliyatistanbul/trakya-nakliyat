@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { servicesData } from '@/data/servicesData'
 
 export default function Services() {
@@ -21,9 +22,10 @@ export default function Services() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {servicesData.map((service) => (
-            <div
+            <Link
               key={service.id}
-              className="group bg-white border border-[#E5E7EB] rounded-[16px] p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-[5px] hover:border-[#d1d5db] cursor-pointer"
+              href={`/hizmetler/${service.slug}`}
+              className="group bg-white border border-[#E5E7EB] rounded-[16px] p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-[5px] hover:border-[#d1d5db] cursor-pointer block"
               style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
             >
               {/* Hover top accent line */}
@@ -59,7 +61,7 @@ export default function Services() {
               <div className="flex items-center gap-1 text-[12px] text-[var(--gold)] font-semibold transition-all duration-200 group-hover:gap-1.5">
                 Detayları gör <span>›</span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -119,4 +121,3 @@ function getServiceIcon(icon: string) {
     </svg>
   )
 }
-

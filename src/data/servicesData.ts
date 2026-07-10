@@ -3,6 +3,7 @@ import type { Service } from '@/types'
 export const servicesData: Service[] = [
   {
     id: 'evden-eve',
+    slug: 'evden-eve-nakliyat',
     icon: 'home-move',
     title: 'Evden Eve Nakliyat',
     description:
@@ -12,6 +13,7 @@ export const servicesData: Service[] = [
   },
   {
     id: 'asansorlu',
+    slug: 'asansorlu-nakliyat',
     icon: 'elevator',
     title: 'Asansörlü Nakliyat',
     description:
@@ -20,6 +22,7 @@ export const servicesData: Service[] = [
   },
   {
     id: 'sehirlerarasi',
+    slug: 'sehirlerarasi-nakliyat',
     icon: 'truck',
     title: 'Şehirlerarası Nakliyat',
     description:
@@ -28,6 +31,7 @@ export const servicesData: Service[] = [
   },
   {
     id: 'ofis',
+    slug: 'ofis-tasimaciligi',
     icon: 'briefcase',
     title: 'Ofis Taşımacılığı',
     description:
@@ -36,6 +40,7 @@ export const servicesData: Service[] = [
   },
   {
     id: 'depolama',
+    slug: 'esya-depolama',
     icon: 'archive',
     title: 'Eşya Depolama',
     description:
@@ -44,6 +49,7 @@ export const servicesData: Service[] = [
   },
   {
     id: 'paketleme',
+    slug: 'profesyonel-paketleme',
     icon: 'package',
     title: 'Profesyonel Paketleme',
     description:

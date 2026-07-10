@@ -1,6 +1,7 @@
 export interface Service {
   id: string
   icon: string
+  slug: string
   title: string
   description: string
   perks: string[]
