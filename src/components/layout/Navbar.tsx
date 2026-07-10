@@ -17,23 +17,30 @@ const drawerSections = [
     id: 'hizmetler',
     label: 'Hizmetler',
     items: [
-      'Evden Eve Nakliyat',
-      'Asansörlü Nakliyat',
-      'Şehirlerarası Nakliyat',
-      'Ofis Taşıma',
-      'Parça Eşya Taşıma',
-      'Eşya Depolama',
+      { label: 'Evden Eve Nakliyat', href: '/hizmetler/evden-eve-nakliyat' },
+      { label: 'Asansörlü Nakliyat', href: '/hizmetler/asansorlu-nakliyat' },
+      { label: 'Şehirlerarası Nakliyat', href: '/hizmetler/sehirlerarasi-nakliyat' },
+      { label: 'Ofis Taşımacılığı', href: '/hizmetler/ofis-tasmaciligi' },
+      { label: 'Parça Eşya Taşıması', href: '/hizmetler/parca-esya-tasmasi' },
+      { label: 'Eşya Depolama', href: '/hizmetler/esya-depolama' },
+      { label: 'Profesyonel Paketleme', href: '/hizmetler/profesyonel-paketleme' },
     ],
   },
   {
     id: 'kurumsal',
     label: 'Kurumsal',
-    items: ['Hakkımızda', 'Müşteri Yorumları', 'Sık Sorulan Sorular'],
+    items: [
+      { label: 'Hakkımızda', href: '/#hakkimizda' },
+      { label: 'Müşteri Yorumları', href: '/#yorumlar' },
+      { label: 'Sık Sorulan Sorular', href: '/#sss' },
+    ],
   },
   {
     id: 'medya',
     label: 'Medya',
-    items: ['Fotoğraf Galerisi', 'Video Galerisi', 'Taşınma Hikâyeleri', 'Blog'],
+    items: [
+      { label: 'Taşınma Hikâyeleri', href: '/#hikayeler' },
+    ],
   },
 ]
 
@@ -210,16 +217,16 @@ export default function Navbar() {
                   <span>{section.label}</span>
                   <span className="text-[var(--gold)]">{openSections.includes(section.id) ? '−' : '+'}</span>
                 </button>
-                <div className={`overflow-hidden transition-all duration-300 ${openSections.includes(section.id) ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+                <div className={`overflow-hidden transition-all duration-300 ${openSections.includes(section.id) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
                   <div className="space-y-1 px-2 pb-2 pt-1">
                     {section.items.map((item) => (
                       <Link
-                        key={item}
-                        href="/"
+                        key={typeof item === 'string' ? item : item.href}
+                        href={typeof item === 'string' ? '/' : item.href}
                         onClick={() => setIsDrawerOpen(false)}
                         className="block rounded-[10px] px-3 py-2 text-[13px] text-[rgba(255,255,255,0.76)] transition-colors hover:bg-[rgba(176,141,87,0.08)] hover:text-[var(--gold)]"
                       >
-                        {item}
+                        {typeof item === 'string' ? item : item.label}
                       </Link>
                     ))}
                   </div>
