@@ -20,11 +20,11 @@ export const SITE_CONFIG = {
 } as const
 
 export const COLORS = {
-  navy: '#0B1220',
-  navyMid: '#141d33',
-  navyCta: '#0F172A',
-  navyCard: '#1a2744',
-  gold: '#B08D57',
-  goldBright: '#B08D57',
-  goldDeep: '#B08D57',
+  navy: '#0D1B2A',
+  navyMid: '#16263D',
+  navyCta: '#112034',
+  navyCard: '#1C304E',
+  gold: '#B88C3B',
+  goldBright: '#B88C3B',
+  goldDeep: '#AD7A31',
 } as const

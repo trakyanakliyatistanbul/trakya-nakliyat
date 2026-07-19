@@ -10,20 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: '#0B1220',
-          mid: '#141d33',
-          cta: '#0F172A',
-          card: '#1a2744',
+          DEFAULT: '#0D1B2A',
+          mid: '#16263D',
+          cta: '#112034',
+          card: '#1C304E',
         },
         gold: {
-          DEFAULT: '#C9A227',
-          bright: '#D4AF37',
-          deep: '#A8841E',
-          pale: 'rgba(201,162,39,0.12)',
+          DEFAULT: '#B88C3B',
+          bright: '#B88C3B',
+          deep: '#AD7A31',
+          pale: 'rgba(184,140,59,0.12)',
         },
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', 'Segoe UI', 'system-ui', 'sans-serif'],
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
       },
       animation: {
         'pulse-dot': 'pulseDot 2s infinite',

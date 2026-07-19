@@ -2,6 +2,9 @@
 
 import { useRef, useState, useEffect, useCallback } from 'react'
 import { reviewsData } from '@/data/reviewsData'
+import Container from '@/components/ui/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
+import Card from '@/components/ui/Card'
 
 const INTERVAL = 6000
 
@@ -95,29 +98,22 @@ export default function Reviews() {
   const cardWidthPct = 100 / cnt
 
   return (
-    <section className="bg-[#F8F9FA] py-14 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1320px] mx-auto">
-        {/* Header */}
-        <div className="mb-7">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
-            Müşteri yorumları
-          </div>
-          <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
-            Müşterilerimiz Ne Diyor?
-          </h2>
-          <p className="text-[14px] text-[#6b7280] leading-[1.7] max-w-[640px]">
-            RÜÇHANOĞLU NAKLİYAT olarak en büyük referansımız, memnuniyetini bizimle paylaşan
-            müşterilerimizdir. Şimdilik örnek müşteri yorumları gösterilmektedir. İlerleyen aşamada
-            bu bölüm Google İşletme Profilimizden alınan gerçek yorumlarla otomatik güncellenecektir.
-          </p>
-        </div>
+    <section className="bg-[#F8F9FA] py-14">
+      <Container>
+        <SectionHeading
+          eyebrow="Müşteri yorumları"
+          title="Müşterilerimiz Ne Diyor?"
+          description="RÜÇHANOĞLU NAKLİYAT olarak en büyük referansımız, memnuniyetini bizimle paylaşan müşterilerimizdir. Şimdilik örnek müşteri yorumları gösterilmektedir. İlerleyen aşamada bu bölüm Google İşletme Profilimizden alınan gerçek yorumlarla otomatik güncellenecektir."
+          className="mb-7"
+          descriptionClassName="text-[14px] leading-[1.7] max-w-[640px]"
+        />
 
         {/* Google skor */}
-        <div
-          className="flex flex-col sm:flex-row sm:items-center flex-wrap items-start gap-4 mb-7 p-4 bg-white border border-[#E5E7EB] rounded-[14px]"
+        <Card
+          className="flex flex-col sm:flex-row sm:items-center flex-wrap items-start gap-4 mb-7 p-4 bg-white rounded-[14px]"
           style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
         >
-          <div className="text-[48px] font-extrabold text-[#0B1220] leading-none">4.9</div>
+          <div className="text-[48px] font-extrabold text-[#0D1B2A] leading-none">4.9</div>
           <div>
             <div className="text-[var(--gold)] text-[18px] tracking-widest">★★★★★</div>
             <div className="text-[12.5px] text-[#6b7280] mt-1">Google yorumlarına dayanarak</div>
@@ -125,7 +121,7 @@ export default function Reviews() {
             <a
               href="#"
               data-href="GOOGLE_BUSINESS_URL"
-              className="inline-flex items-center gap-1.5 border border-[var(--gold)] px-3 py-1.5 rounded-[8px] text-[11.5px] font-semibold text-[var(--gold)] no-underline mt-1.5 hover:bg-[rgba(176,141,87,0.08)] transition-colors"
+              className="inline-flex items-center gap-1.5 border border-[var(--gold)] px-3 py-1.5 rounded-[8px] text-[11.5px] font-semibold text-[var(--gold)] no-underline mt-1.5 hover:bg-[rgba(184, 140, 59,0.08)] transition-colors"
             >
               🌐 Google&apos;da görüntüle
             </a>
@@ -133,7 +129,7 @@ export default function Reviews() {
           <div className="ml-auto min-w-[220px] flex items-center gap-1.5 text-[11.5px] text-[#9ca3af] bg-[#f3f4f6] px-3 py-1.5 rounded-[8px]">
             ℹ Gerçek Google yorumları entegrasyonu yakında aktif olacak
           </div>
-        </div>
+        </Card>
 
         {/* Carousel */}
         <div
@@ -156,11 +152,11 @@ export default function Reviews() {
                     style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
                   >
                     <div className="flex items-center gap-2.5 mb-3">
-                      <div className="w-[38px] h-[38px] rounded-full bg-[#0B1220] flex items-center justify-center text-[12px] font-bold text-[var(--gold)] flex-shrink-0">
+                      <div className="w-[38px] h-[38px] rounded-full bg-[#0D1B2A] flex items-center justify-center text-[12px] font-bold text-[var(--gold)] flex-shrink-0">
                         {r.initials}
                       </div>
                       <div>
-                        <div className="text-[13.5px] font-bold text-[#0B1220]">{r.name}</div>
+                        <div className="text-[13.5px] font-bold text-[#0D1B2A]">{r.name}</div>
                         <div className="text-[var(--gold)] text-[11px] tracking-wide">★★★★★</div>
                         <div className="text-[11px] text-[#9ca3af]">{r.date}</div>
                       </div>
@@ -182,7 +178,7 @@ export default function Reviews() {
             <button
               onClick={handlePrev}
               aria-label="Önceki"
-              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0B1220] hover:text-[var(--gold)] transition-all duration-150"
+              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0D1B2A] hover:text-[var(--gold)] transition-all duration-150"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
             >
               ‹
@@ -209,7 +205,7 @@ export default function Reviews() {
             <button
               onClick={handleNext}
               aria-label="Sonraki"
-              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0B1220] hover:text-[var(--gold)] transition-all duration-150"
+              className="w-10 h-10 rounded-full bg-white border-[1.5px] border-[#E5E7EB] flex items-center justify-center text-[#9ca3af] hover:border-[var(--gold)] hover:bg-[#0D1B2A] hover:text-[var(--gold)] transition-all duration-150"
               style={{ boxShadow: '0 1px 3px rgba(0,0,0,0.06)' }}
             >
               ›
@@ -221,7 +217,7 @@ export default function Reviews() {
             <div ref={progressRef} className="h-full bg-[var(--gold)] rounded-full" style={{ width: '0%' }} />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

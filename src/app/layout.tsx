@@ -30,19 +30,11 @@ export const metadata: Metadata = {
     title: 'RÜÇHANOĞLU NAKLİYAT | İstanbul Evden Eve Nakliyat',
     description:
       'İstanbul genelinde profesyonel evden eve nakliyat hizmeti. Asansörlü sistem, sigortalı taşıma, ücretsiz ekspertiz.',
-    images: [
-      {        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'RÜÇHANOĞLU NAKLİYAT',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'RÜÇHANOĞLU NAKLİYAT | İstanbul Evden Eve Nakliyat',
     description: 'İstanbul genelinde profesyonel evden eve nakliyat. 0544 999 34 66',
-    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,

@@ -1,31 +1,26 @@
-import Link from 'next/link'
 import { servicesData } from '@/data/servicesData'
+import Container from '@/components/ui/Container'
+import SectionHeading from '@/components/ui/SectionHeading'
+import Card from '@/components/ui/Card'
+import IconBadge from '@/components/ui/IconBadge'
 
 export default function Services() {
   return (
-    <section id="hizmetler" className="bg-[#F8F9FA] py-14 px-4 sm:px-6 lg:px-10">
-      <div className="max-w-[1320px] mx-auto">
-        {/* Header */}
-        <div className="mb-9">
-          <div className="text-[11px] font-bold tracking-[1.5px] uppercase text-[var(--gold)] mb-2">
-            Hizmetlerimiz
-          </div>
-          <h2 className="text-[28px] font-bold text-[#0B1220] mb-2.5 tracking-tight">
-            RÜÇHANOĞLU NAKLİYAT ile her ihtiyaca uygun çözüm
-          </h2>
-          <p className="text-[14.5px] text-[#6b7280] leading-[1.7] max-w-[640px]">
-            Beylikdüzü ve İstanbul genelinde evden eve nakliyattan şehirlerarası taşımaya,
-            asansörlü sistemden eşya depolamaya kadar profesyonel hizmet sunuyoruz.
-          </p>
-        </div>
+    <section id="hizmetler" className="bg-[#F8F9FA] py-14">
+      <Container>
+        <SectionHeading
+          eyebrow="Hizmetlerimiz"
+          title="RÜÇHANOĞLU NAKLİYAT ile her ihtiyaca uygun çözüm"
+          description="Beylikdüzü ve İstanbul genelinde evden eve nakliyattan şehirlerarası taşımaya, asansörlü sistemden eşya depolamaya kadar profesyonel hizmet sunuyoruz."
+        />
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {servicesData.map((service) => (
-            <Link
+            <Card
               key={service.id}
               href={`/hizmetler/${service.slug}`}
-              className="group bg-white border border-[#E5E7EB] rounded-[16px] p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-[5px] hover:border-[#d1d5db] cursor-pointer block"
+              className="group bg-white rounded-[16px] p-6 relative overflow-hidden transition-all duration-300 hover:-translate-y-[5px] hover:border-[#d1d5db] cursor-pointer"
               style={{ boxShadow: '0 1px 2px rgba(0,0,0,0.04)' }}
             >
               {/* Hover top accent line */}
@@ -33,19 +28,19 @@ export default function Services() {
 
               {/* Featured badge */}
               {service.featured && (
-                <span className="absolute top-3 right-3 bg-[#0B1220] text-[var(--gold)] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                <span className="absolute top-3 right-3 bg-[#0D1B2A] text-[var(--gold)] text-[10px] font-bold px-2 py-0.5 rounded-full">
                   En çok tercih
                 </span>
               )}
 
               {/* Icon */}
-              <div className="w-11 h-11 rounded-[11px] bg-white border-[1.5px] border-[var(--gold)] flex items-center justify-center mb-4 transition-all duration-300 group-hover:bg-[#0B1220] group-hover:border-[#0B1220]">
+              <IconBadge invertOnHover className="w-11 h-11 rounded-[11px] mb-4">
                 <span className="text-[var(--gold)] transition-colors duration-300">
                   {getServiceIcon(service.icon)}
                 </span>
-              </div>
+              </IconBadge>
 
-              <h3 className="text-[14px] font-bold text-[#0B1220] mb-1.5">{service.title}</h3>
+              <h3 className="text-[14px] font-bold text-[#0D1B2A] mb-1.5">{service.title}</h3>
               <p className="text-[12.5px] text-[#6b7280] leading-[1.65] mb-3">{service.description}</p>
 
               {/* Perks */}
@@ -61,10 +56,10 @@ export default function Services() {
               <div className="flex items-center gap-1 text-[12px] text-[var(--gold)] font-semibold transition-all duration-200 group-hover:gap-1.5">
                 Detayları gör <span>›</span>
               </div>
-            </Link>
+            </Card>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

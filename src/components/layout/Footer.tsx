@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { SITE_CONFIG } from '@/lib/constants'
+import Container from '@/components/ui/Container'
+import Logo from '@/components/ui/Logo'
 
 const serviceLinks = [
   { label: 'Evden eve nakliyat', href: '/hizmetler/evden-eve-nakliyat' },
@@ -21,21 +23,13 @@ const regionLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B1220] border-t border-[rgba(176,141,87,0.15)]">
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-10 pt-12 pb-0">
-        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-7 pb-10 border-b border-[rgba(176,141,87,0.15)]">
+    <footer className="bg-[#0D1B2A] border-t border-[rgba(184, 140, 59,0.15)]">
+      <Container className="pt-12 pb-0">
+        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1fr] gap-7 pb-10 border-b border-[rgba(184, 140, 59,0.15)]">
 
           {/* Marka sütunu */}
           <div>
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-[38px] h-[38px] bg-[var(--gold)] rounded-[8px] flex items-center justify-center flex-shrink-0">
-                <span className="text-[13px] font-black text-[#0B1220]">TN</span>
-              </div>
-              <div>
-                <div className="text-[15px] font-bold text-white">TRAKYA NAKLİYAT</div>
-                <div className="text-[9px] text-[rgba(176,141,87,0.6)] uppercase tracking-[1px]">İSTANBUL</div>
-              </div>
-            </div>
+            <Logo variant="compact" className="mb-3" />
             <p className="text-[12.5px] text-[rgba(255,255,255,0.4)] leading-[1.75] max-w-[220px] mb-4">
               Beylikdüzü ve İstanbul genelinde güvenilir, profesyonel evden eve nakliyat hizmeti.
             </p>
@@ -43,7 +37,7 @@ export default function Footer() {
               {['Sigortalı', 'Lisanslı', '4.9 Google'].map((cert) => (
                 <span
                   key={cert}
-                  className="border border-[rgba(176,141,87,0.25)] px-2.5 py-[3px] rounded-[5px] text-[10.5px] text-[rgba(255,255,255,0.5)] flex items-center gap-1"
+                  className="border border-[rgba(184, 140, 59,0.25)] px-2.5 py-[3px] rounded-[5px] text-[10.5px] text-[rgba(255,255,255,0.5)] flex items-center gap-1"
                 >
                   <span className="text-[var(--gold)] text-xs">✓</span> {cert}
                 </span>
@@ -62,7 +56,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-8 h-8 rounded-[7px] border border-[rgba(176,141,87,0.25)] flex items-center justify-center text-[var(--gold)] text-[10px] font-bold hover:bg-[rgba(176,141,87,0.1)] hover:border-[rgba(176,141,87,0.5)] transition-colors"
+                  className="w-8 h-8 rounded-[7px] border border-[rgba(184, 140, 59,0.25)] flex items-center justify-center text-[var(--gold)] text-[10px] font-bold hover:bg-[rgba(184, 140, 59,0.1)] hover:border-[rgba(184, 140, 59,0.5)] transition-colors"
                 >
                   {s.icon}
                 </a>
@@ -72,7 +66,7 @@ export default function Footer() {
 
           {/* Hizmetler */}
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(176,141,87,0.55)] mb-3">
+            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(184, 140, 59,0.55)] mb-3">
               Hizmetler
             </h3>
             <ul className="list-none flex flex-col gap-2">
@@ -92,7 +86,7 @@ export default function Footer() {
 
           {/* Hizmet bölgeleri */}
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(176,141,87,0.55)] mb-3">
+            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(184, 140, 59,0.55)] mb-3">
               Hizmet Bölgeleri
             </h3>
             <ul className="list-none flex flex-col gap-2">
@@ -112,7 +106,7 @@ export default function Footer() {
 
           {/* İletişim */}
           <div>
-            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(176,141,87,0.55)] mb-3">
+            <h3 className="text-[10.5px] font-extrabold uppercase tracking-[1.2px] text-[rgba(184, 140, 59,0.55)] mb-3">
               İletişim
             </h3>
             <ul className="list-none flex flex-col gap-2">
@@ -159,7 +153,7 @@ export default function Footer() {
             <Link href="/kullanim-kosullari" className="text-[rgba(255,255,255,0.26)] no-underline hover:text-[var(--gold)] transition-colors">Kullanım koşulları</Link>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
+import Logo from '@/components/ui/Logo'
 
 const navLinks = [
   { label: 'Hizmetler', href: '#hizmetler' },
@@ -74,29 +75,16 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-[rgba(176,141,87,0.18)] bg-[#0B1220]/95 backdrop-blur-sm">
+      <header className="sticky top-0 z-50 border-b border-[rgba(184, 140, 59,0.18)] bg-white">
         <nav className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-10">
-          <Link href="/" className="flex items-center gap-3 no-underline">
-            <div className="flex h-[42px] w-[42px] flex-shrink-0 items-center justify-center rounded-[9px] bg-[var(--gold)]">
-              <span className="text-[15px] font-black tracking-tight text-[#0B1220]">TN</span>
-            </div>
-            <div className="h-9 w-px rounded-sm bg-[rgba(176,141,87,0.3)]" />
-            <div className="flex flex-col justify-center">
-              <span className="text-[17px] font-extrabold leading-tight tracking-tight text-white">
-                TRAKYA <span className="text-[var(--gold)]">NAKLİYAT</span>
-              </span>
-              <span className="mt-0.5 text-[9px] uppercase tracking-[1.2px] text-[rgba(255,255,255,0.42)]">
-                İstanbul · Evden Eve Nakliyat
-              </span>
-            </div>
-          </Link>
+          <Logo onLight />
 
           <ul className="hidden items-center gap-0.5 list-none md:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="rounded-md px-3 py-1.5 text-[13.5px] text-[rgba(255,255,255,0.60)] no-underline transition-colors duration-150 hover:text-[var(--gold)]"
+                  className="rounded-md px-3 py-1.5 text-[13.5px] text-[#1F2937] no-underline transition-colors duration-150 hover:text-[var(--gold)]"
                 >
                   {link.label}
                 </Link>
@@ -111,10 +99,20 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex items-center justify-center text-[#C8A66A] transition-all duration-200 hover:scale-110 hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:bg-clip-text hover:text-transparent active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A66A]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1220]"
+                className="flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z" />
+                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ig-gradient-m" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f58529" />
+                      <stop offset="50%" stopColor="#dd2a7b" />
+                      <stop offset="100%" stopColor="#8134af" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#ig-gradient-m)"
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"
+                  />
                 </svg>
               </a>
               <a
@@ -122,7 +120,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex items-center justify-center text-[#C8A66A] transition-all duration-200 hover:scale-110 hover:text-[#FF0000] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A66A]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1220]"
+                className="flex items-center justify-center text-[#FF0000] transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                   <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
@@ -132,7 +130,7 @@ export default function Navbar() {
                 type="button"
                 aria-label="Menüyü aç"
                 onClick={() => setIsDrawerOpen(true)}
-                className="flex items-center justify-center text-[#C8A66A] transition-all duration-200 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(200,166,106,0.45)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C8A66A]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0B1220]"
+                className="flex items-center justify-center text-[#B88C3B] transition-all duration-200 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(184, 140, 59,0.45)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                   <path d="M4 7h16" />
@@ -148,10 +146,20 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex items-center justify-center text-[#C8A66A] transition-all duration-250 hover:scale-110 hover:bg-gradient-to-br hover:from-[#f58529] hover:via-[#dd2a7b] hover:to-[#8134af] hover:bg-clip-text hover:text-transparent"
+                className="flex items-center justify-center transition-transform duration-200 hover:scale-110"
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
-                  <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z" />
+                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="ig-gradient-d" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#f58529" />
+                      <stop offset="50%" stopColor="#dd2a7b" />
+                      <stop offset="100%" stopColor="#8134af" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#ig-gradient-d)"
+                    d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm5.25-2.75a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z"
+                  />
                 </svg>
               </a>
               <a
@@ -159,7 +167,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex items-center justify-center text-[#C8A66A] transition-all duration-250 hover:scale-110 hover:text-[#FF0000]"
+                className="flex items-center justify-center text-[#FF0000] transition-transform duration-200 hover:scale-110"
               >
                 <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
                   <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
@@ -176,10 +184,10 @@ export default function Navbar() {
       >
         <div className="absolute inset-0 bg-[rgba(3,7,18,0.62)] backdrop-blur-[2px]" />
         <aside
-          className={`absolute right-0 top-0 flex h-full w-[88vw] max-w-[360px] flex-col border-l border-[rgba(176,141,87,0.2)] bg-[#0B1220] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.36)] transition-transform duration-300 ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          className={`absolute right-0 top-0 flex h-full w-[88vw] max-w-[360px] flex-col border-l border-[rgba(184, 140, 59,0.2)] bg-[#0D1B2A] p-5 shadow-[0_24px_80px_rgba(0,0,0,0.36)] transition-transform duration-300 ${isDrawerOpen ? 'translate-x-0' : 'translate-x-full'}`}
           onClick={(event) => event.stopPropagation()}
         >
-          <div className="flex items-center justify-between border-b border-[rgba(176,141,87,0.16)] pb-4">
+          <div className="flex items-center justify-between border-b border-[rgba(184, 140, 59,0.16)] pb-4">
             <div>
               <p className="text-[11px] uppercase tracking-[0.28em] text-[rgba(255,255,255,0.46)]">Menü</p>
               <p className="mt-1 text-[16px] font-semibold text-white">RÜÇHANOĞLU NAKLİYAT</p>
@@ -188,7 +196,7 @@ export default function Navbar() {
               type="button"
               aria-label="Menüyü kapat"
               onClick={() => setIsDrawerOpen(false)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(176,141,87,0.22)] bg-[rgba(176,141,87,0.08)] text-[var(--gold)]"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(184, 140, 59,0.22)] bg-[rgba(184, 140, 59,0.08)] text-[var(--gold)]"
             >
               <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
                 <path d="M6 6l12 12" />
@@ -201,14 +209,14 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setIsDrawerOpen(false)}
-              className="flex items-center justify-between rounded-[14px] border border-[rgba(176,141,87,0.14)] bg-[rgba(176,141,87,0.06)] px-4 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[rgba(176,141,87,0.12)]"
+              className="flex items-center justify-between rounded-[14px] border border-[rgba(184, 140, 59,0.14)] bg-[rgba(184, 140, 59,0.06)] px-4 py-3 text-[15px] font-semibold text-white transition-colors hover:bg-[rgba(184, 140, 59,0.12)]"
             >
               <span>Ana Sayfa</span>
               <span className="text-[var(--gold)]">→</span>
             </Link>
 
             {drawerSections.map((section) => (
-              <div key={section.id} className="rounded-[14px] border border-[rgba(176,141,87,0.14)] bg-[rgba(255,255,255,0.03)] px-3 py-2">
+              <div key={section.id} className="rounded-[14px] border border-[rgba(184, 140, 59,0.14)] bg-[rgba(255,255,255,0.03)] px-3 py-2">
                 <button
                   type="button"
                   onClick={() => toggleSection(section.id)}
@@ -224,7 +232,7 @@ export default function Navbar() {
                         key={typeof item === 'string' ? item : item.href}
                         href={typeof item === 'string' ? '/' : item.href}
                         onClick={() => setIsDrawerOpen(false)}
-                        className="block rounded-[10px] px-3 py-2 text-[13px] text-[rgba(255,255,255,0.76)] transition-colors hover:bg-[rgba(176,141,87,0.08)] hover:text-[var(--gold)]"
+                        className="block rounded-[10px] px-3 py-2 text-[13px] text-[rgba(255,255,255,0.76)] transition-colors hover:bg-[rgba(184, 140, 59,0.08)] hover:text-[var(--gold)]"
                       >
                         {typeof item === 'string' ? item : item.label}
                       </Link>
