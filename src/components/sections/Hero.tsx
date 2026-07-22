@@ -71,13 +71,15 @@ export default function Hero() {
       <Container className="relative z-10">
         <div className="grid gap-8">
           <div>
-            <h1 className="mx-auto max-w-4xl text-center text-[40px] font-extrabold leading-[1.15] tracking-tight text-white lg:text-[48px]">
+            <h1 className="mx-auto max-w-3xl text-center text-[30px] font-extrabold leading-[1.25] tracking-tight text-white sm:max-w-4xl sm:text-[38px] lg:max-w-5xl lg:text-[48px]">
               İstanbul’dan Tüm Türkiye’ye
               <br />
-              Kurumsal ve Profesyonel Nakliye Hizmeti
+              Kurumsal ve Profesyonel
+              <br />
+              Nakliye Hizmeti
             </h1>
 
-            <div className="mx-auto mt-8 max-w-2xl space-y-3 text-center">
+            <div className="mx-auto mt-8 max-w-xl space-y-5 text-center">
               <p className="text-[15px] leading-[1.8] text-[rgba(255,255,255,0.9)]">
                 Taşınma sürecinizi stressiz ve güvenli bir deneyime dönüştürüyoruz.
               </p>

@@ -190,7 +190,7 @@ export default function Navbar() {
                   <path d="M5 2h14" />
                   <path d="M5 8h14" />
                 </svg>
-                <span className="text-[9px] font-medium leading-none tracking-wide text-[#1F2937]">Menü</span>
+                <span className="w-full text-center text-[9px] font-medium leading-none tracking-wide text-[#1F2937]">Menü</span>
               </button>
             </div>
 
