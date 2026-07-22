@@ -51,7 +51,7 @@ const HEADER_HEIGHT = { base: 88, scrolled: 76 }
 const NAV_FONT_SIZE = { base: 14.5, scrolled: 13 }
 const NAV_LINK_PADDING = { base: '7px 14px', scrolled: '5px 11px' }
 const NAV_GAP = { base: 4, scrolled: 2 }
-const ICON_SIZE = { base: 22, scrolled: 19 }
+const ICON_SIZE = { base: 26, scrolled: 22 }
 const TRANSITION = 'transition-all duration-[280ms] ease-out'
 
 export default function Navbar() {

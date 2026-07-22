@@ -4,7 +4,7 @@ import { SITE_CONFIG } from '@/lib/constants'
 
 export default function WhatsAppFloat() {
   return (
-    <div className="fixed left-[calc(1rem+env(safe-area-inset-left))] sm:right-[calc(1rem+env(safe-area-inset-right))] sm:left-auto bottom-[calc(4.5rem+env(safe-area-inset-bottom))] sm:bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-50">
+    <div className="fixed right-[calc(1rem+env(safe-area-inset-right))] bottom-[calc(1.5rem+env(safe-area-inset-bottom))] z-50">
       {/* Pulse ring */}
       <div
         className="absolute bottom-0 right-0 w-[44px] h-[44px] rounded-full pointer-events-none"

@@ -31,7 +31,7 @@ export default function Hero() {
 
       <Container className="relative z-10">
         {/* Mobile-first single centered column: H1 -> subtext -> truck image -> CTAs (StatsBar follows next) */}
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-left">
           <h1
             className="font-extrabold tracking-tight text-white"
             style={{ fontSize: 'clamp(18px, 5vw, 44px)', lineHeight: 1.3 }}
@@ -41,13 +41,13 @@ export default function Hero() {
             Kurumsal ve Profesyonel Nakliye Hizmeti
           </h1>
 
-          <p className="mx-auto mt-5 max-w-md text-[14px] leading-[1.75] text-[rgba(255,255,255,0.85)]">
+          <p className="mt-5 max-w-md text-[14px] leading-[1.75] text-[rgba(255,255,255,0.85)]">
             <strong className="font-bold text-white">RÜÇHANOĞLU NAKLİYAT</strong> olarak 20+ yıllık deneyimimiz,
             uzman ekibimiz ve sigortalı taşıma hizmetimizle eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
           </p>
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl">
+        <div className="mx-auto mt-8 max-w-[860px]">
           <Image
             src="/hero-truck.jpg"
             alt="Rüçhanoğlu Nakliyat kurumsal nakliye aracı"
