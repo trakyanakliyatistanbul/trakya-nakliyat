@@ -45,9 +45,26 @@ const drawerSections = [
   },
 ]
 
+// Scroll-collapsed header sizing — all reduce ~12-15% from the spacious initial state,
+// landing close to the header's pre-redesign size once scrolled.
+const HEADER_HEIGHT = { base: 88, scrolled: 76 }
+const NAV_FONT_SIZE = { base: 14.5, scrolled: 13 }
+const NAV_LINK_PADDING = { base: '7px 14px', scrolled: '5px 11px' }
+const NAV_GAP = { base: 4, scrolled: 2 }
+const ICON_SIZE = { base: 22, scrolled: 19 }
+const TRANSITION = 'transition-all duration-[280ms] ease-out'
+
 export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)
   const [openSections, setOpenSections] = useState<string[]>(['hizmetler'])
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 12)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     if (!isDrawerOpen) return
@@ -75,16 +92,30 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 border-b border-[rgba(184, 140, 59,0.18)] bg-white">
-        <nav className="mx-auto flex h-[76px] max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-10">
-          <Logo onLight />
+      <header
+        className={`sticky top-0 z-50 border-b border-[rgba(184, 140, 59,0.18)] bg-white ${TRANSITION} ${
+          isScrolled ? 'shadow-[0_4px_24px_rgba(15,23,42,0.06)] backdrop-blur-sm' : 'shadow-none'
+        }`}
+      >
+        <nav
+          className={`mx-auto flex max-w-[1320px] items-center justify-between px-4 sm:px-6 lg:px-10 ${TRANSITION}`}
+          style={{ height: isScrolled ? HEADER_HEIGHT.scrolled : HEADER_HEIGHT.base }}
+        >
+          <Logo onLight scrolled={isScrolled} />
 
-          <ul className="hidden items-center gap-0.5 list-none md:flex">
+          <ul
+            className="hidden list-none items-center md:flex"
+            style={{ gap: isScrolled ? NAV_GAP.scrolled : NAV_GAP.base }}
+          >
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="rounded-md px-3 py-1.5 text-[13.5px] text-[#1F2937] no-underline transition-colors duration-150 hover:text-[var(--gold)]"
+                  className={`rounded-md text-[#1F2937] no-underline hover:text-[var(--gold)] ${TRANSITION}`}
+                  style={{
+                    fontSize: isScrolled ? NAV_FONT_SIZE.scrolled : NAV_FONT_SIZE.base,
+                    padding: isScrolled ? NAV_LINK_PADDING.scrolled : NAV_LINK_PADDING.base,
+                  }}
                 >
                   {link.label}
                 </Link>
@@ -93,15 +124,22 @@ export default function Navbar() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <div className="flex items-center gap-3 md:hidden">
+            <div
+              className={`flex items-center md:hidden ${TRANSITION}`}
+              style={{ gap: isScrolled ? 10 : 12 }}
+            >
               <a
                 href={SITE_CONFIG.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className={`flex items-center justify-center hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${TRANSITION}`}
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                >
                   <defs>
                     <linearGradient id="ig-gradient-m" x1="0%" y1="100%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#f58529" />
@@ -120,9 +158,14 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex items-center justify-center text-[#FF0000] transition-transform duration-200 hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className={`flex items-center justify-center text-[#FF0000] hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${TRANSITION}`}
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                >
                   <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
                 </svg>
               </a>
@@ -130,9 +173,16 @@ export default function Navbar() {
                 type="button"
                 aria-label="Menüyü aç"
                 onClick={() => setIsDrawerOpen(true)}
-                className="flex items-center justify-center text-[#B88C3B] transition-all duration-200 hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(184, 140, 59,0.45)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                className={`flex items-center justify-center text-[#B88C3B] hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(184, 140, 59,0.45)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${TRANSITION}`}
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  aria-hidden="true"
+                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                >
                   <path d="M4 7h16" />
                   <path d="M4 12h16" />
                   <path d="M4 17h16" />
@@ -140,15 +190,22 @@ export default function Navbar() {
               </button>
             </div>
 
-            <div className="hidden items-center gap-3 md:flex">
+            <div
+              className={`hidden items-center md:flex ${TRANSITION}`}
+              style={{ gap: isScrolled ? 10 : 12 }}
+            >
               <a
                 href={SITE_CONFIG.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex items-center justify-center transition-transform duration-200 hover:scale-110"
+                className={`flex items-center justify-center hover:scale-110 ${TRANSITION}`}
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                >
                   <defs>
                     <linearGradient id="ig-gradient-d" x1="0%" y1="100%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#f58529" />
@@ -167,9 +224,14 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex items-center justify-center text-[#FF0000] transition-transform duration-200 hover:scale-110"
+                className={`flex items-center justify-center text-[#FF0000] hover:scale-110 ${TRANSITION}`}
               >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  fill="currentColor"
+                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                >
                   <path d="M21.8 7.2a2.8 2.8 0 0 0-2-2A35.7 35.7 0 0 0 12 4.7a35.7 35.7 0 0 0-7.8.5 2.8 2.8 0 0 0-2 2 31.6 31.6 0 0 0-.5 4.8 31.6 31.6 0 0 0 .5 4.8 2.8 2.8 0 0 0 2 2 35.7 35.7 0 0 0 7.8.5 35.7 35.7 0 0 0 7.8-.5 2.8 2.8 0 0 0 2-2 31.6 31.6 0 0 0 .5-4.8 31.6 31.6 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z" />
                 </svg>
               </a>

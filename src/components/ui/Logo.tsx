@@ -8,13 +8,21 @@ interface LogoProps {
   variant?: 'full' | 'compact'
   /** Set when the logo sits on a white/light background (e.g. the header) instead of navy. */
   onLight?: boolean
+  /** Set on scroll to smoothly shrink the logo back down (header-only; ignored for compact). */
+  scrolled?: boolean
   className?: string
 }
 
-export default function Logo({ variant = 'full', onLight = false, className = '' }: LogoProps) {
+const SIZES = {
+  full: { base: 48, scrolled: 42 },
+  compact: { base: 32, scrolled: 32 },
+}
+
+export default function Logo({ variant = 'full', onLight = false, scrolled = false, className = '' }: LogoProps) {
   const isCompact = variant === 'compact'
-  const height = isCompact ? 32 : 40
-  const width = Math.round(height * LOGO_ASPECT_RATIO)
+  const { base, scrolled: scrolledHeight } = isCompact ? SIZES.compact : SIZES.full
+  const height = scrolled ? scrolledHeight : base
+  const width = Math.round(base * LOGO_ASPECT_RATIO)
 
   return (
     <Link href="/" className={`flex items-center no-underline ${className}`}>
@@ -22,8 +30,9 @@ export default function Logo({ variant = 'full', onLight = false, className = ''
         src={onLight ? '/logo-dark.png' : '/logo-light.png'}
         alt="Rüçhanoğlu Nakliyat"
         width={width}
-        height={height}
+        height={base}
         priority={!isCompact}
+        className="transition-all duration-[280ms] ease-out"
         style={{ height, width: 'auto' }}
       />
     </Link>
