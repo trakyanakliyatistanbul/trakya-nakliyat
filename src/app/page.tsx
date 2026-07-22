@@ -7,6 +7,7 @@ import Services from '@/components/sections/Services'
 import TrustStats from '@/components/sections/TrustStats'
 import MovingStories from '@/components/sections/MovingStories'
 import FAQ from '@/components/sections/FAQ'
+import About from '@/components/sections/About'
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <StatsBar />
+        <About />
         <TrustStats />
         <Services />
         <MovingStories />
