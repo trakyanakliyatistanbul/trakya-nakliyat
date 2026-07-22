@@ -70,19 +70,30 @@ export default function Hero() {
 
       <Container className="relative z-10">
         <div className="grid gap-8">
-          <div className="space-y-6 max-w-3xl">
-            <h1 className="text-[36px] lg:text-[42px] font-bold leading-[1.08] text-white tracking-tight">
-              Beylikdüzü Evden Eve Nakliyat Hizmetinde{' '}
-              <em className="not-italic text-[var(--gold)]">Güvenin Adresi</em>
+          <div>
+            <h1 className="mx-auto max-w-4xl text-center text-[40px] font-extrabold leading-[1.15] tracking-tight text-white lg:text-[48px]">
+              İstanbul’dan Tüm Türkiye’ye
+              <br />
+              Kurumsal ve Profesyonel Nakliye Hizmeti
             </h1>
 
-            <p className="text-[15px] text-[rgba(255,255,255,0.75)] leading-[1.8] max-w-[600px]">
-              <strong className="text-white font-semibold">RÜÇHANOĞLU NAKLİYAT</strong> olarak
-              İstanbul genelinde profesyonel evden eve nakliyat, asansörlü taşıma ve sigortalı hizmet sunuyoruz.
-              Deneyimli ekiplerimizle eşyalarınızı güvenle yeni adresinize ulaştırıyoruz.
-            </p>
+            <div className="mx-auto mt-8 max-w-2xl space-y-3 text-center">
+              <p className="text-[15px] leading-[1.8] text-[rgba(255,255,255,0.9)]">
+                Taşınma sürecinizi stressiz ve güvenli bir deneyime dönüştürüyoruz.
+              </p>
+              <p className="text-[15px] leading-[1.8] text-[rgba(255,255,255,0.9)]">
+                <strong className="font-bold">RÜÇHANOĞLU NAKLİYAT</strong>'ın senelere dayanan tecrübesi, kurumsal
+                lojistik altyapısı ve uzman kadrosuyla İstanbul genelinde ve Türkiye'nin dört bir yanında güvenilir,
+                profesyonel nakliye hizmeti sunuyoruz.
+              </p>
+              <p className="text-[15px] leading-[1.8] text-[rgba(255,255,255,0.9)]">
+                Endişeye mahal yok.
+                <br />
+                Eşyalarınız bize emanet!
+              </p>
+            </div>
 
-            <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+            <div className="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
               <Button href={SITE_CONFIG.phoneHref} variant="primary" fullWidthMobile glow icon={<span>📞</span>}>
                 Hemen Ara
               </Button>
