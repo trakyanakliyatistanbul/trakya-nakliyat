@@ -93,7 +93,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 border-b border-[rgba(184, 140, 59,0.18)] bg-white ${TRANSITION} ${
+        className={`fixed inset-x-0 top-0 z-50 border-b border-[rgba(184, 140, 59,0.18)] bg-white ${TRANSITION} ${
           isScrolled ? 'shadow-[0_4px_24px_rgba(15,23,42,0.06)] backdrop-blur-sm' : 'shadow-none'
         }`}
       >
@@ -239,6 +239,14 @@ export default function Navbar() {
           </div>
         </nav>
       </header>
+
+      {/* Fixed header no longer occupies flow space — this spacer keeps page content clear of it,
+          and shrinks in lockstep with the header so no gap opens up once scrolled. */}
+      <div
+        aria-hidden="true"
+        className={TRANSITION}
+        style={{ height: isScrolled ? HEADER_HEIGHT.scrolled : HEADER_HEIGHT.base }}
+      />
 
       <div
         className={`fixed inset-0 z-[60] transition-opacity duration-300 ${isDrawerOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
