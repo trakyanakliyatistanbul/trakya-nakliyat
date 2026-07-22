@@ -173,20 +173,24 @@ export default function Navbar() {
                 type="button"
                 aria-label="Menüyü aç"
                 onClick={() => setIsDrawerOpen(true)}
-                className={`flex items-center justify-center text-[#B88C3B] hover:scale-110 hover:drop-shadow-[0_0_8px_rgba(184, 140, 59,0.45)] active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${TRANSITION}`}
+                className={`flex flex-col items-center justify-center gap-1 text-[#1F2937] hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#B88C3B]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white ${TRANSITION}`}
               >
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 24 10"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="1.8"
+                  strokeLinecap="round"
                   aria-hidden="true"
-                  style={{ width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base, height: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base }}
+                  style={{
+                    width: isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base,
+                    height: (isScrolled ? ICON_SIZE.scrolled : ICON_SIZE.base) * (10 / 24),
+                  }}
                 >
-                  <path d="M4 7h16" />
-                  <path d="M4 12h16" />
-                  <path d="M4 17h16" />
+                  <path d="M5 2h14" />
+                  <path d="M5 8h14" />
                 </svg>
+                <span className="text-[9px] font-medium leading-none tracking-wide text-[#1F2937]">Menü</span>
               </button>
             </div>
 
