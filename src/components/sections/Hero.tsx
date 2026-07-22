@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 import { SITE_CONFIG } from '@/lib/constants'
 import Container from '@/components/ui/Container'
@@ -48,6 +49,21 @@ export default function Hero() {
       id="hero"
       className="bg-[#0D1B2A] pt-12 pb-10 relative overflow-hidden lg:pt-16"
     >
+      <Image
+        src="/hero-truck.jpg"
+        alt="Rüçhanoğlu Nakliyat kurumsal nakliye aracı"
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none object-cover object-[80%_center] sm:object-[68%_center] lg:object-center"
+      />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(90deg, rgba(13,27,42,0.8) 0%, rgba(13,27,42,0.78) 60%, rgba(13,27,42,0.68) 100%)',
+        }}
+      />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
